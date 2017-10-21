@@ -2,7 +2,7 @@ namespace DracoProtos.Command
 {
     public class AuthData : AuthDataBase
 	{
-		public bool IsDevice()
+		public bool IsDevice() 
 		{
 			return this.authType == AuthType.DEVICE;
 		}
