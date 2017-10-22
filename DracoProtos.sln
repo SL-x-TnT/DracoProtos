@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DracoProtos", "DracoProtos\DracoProtos.csproj", "{93CD5DFB-1B22-434A-8F2C-3F22D70B87DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{EDB54D2D-AD83-483E-9031-9B7F9A48325C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tester", "Tester\Tester.csproj", "{EDB54D2D-AD83-483E-9031-9B7F9A48325C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
