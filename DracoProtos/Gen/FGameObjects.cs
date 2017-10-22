@@ -121,7 +121,8 @@ namespace DracoProtos
 			FGameObjects.CLASSES.Add(typeof(FQuestCompleted), 114);
 			FGameObjects.CLASSES.Add(typeof(FQuestUpdate), 115);
 			FGameObjects.CLASSES.Add(typeof(FScoutRequest), 116);
-			FGameObjects.CLASSES.Add(typeof(FShopConfig), 118);
+            FGameObjects.CLASSES.Add(typeof(FServiceError), 117);
+            FGameObjects.CLASSES.Add(typeof(FShopConfig), 118);
 			FGameObjects.CLASSES.Add(typeof(FSpellCastDone), 119);
 			FGameObjects.CLASSES.Add(typeof(FSpellEffectsUpdate), 120);
 			FGameObjects.CLASSES.Add(typeof(FStartEncounterRequest), 121);

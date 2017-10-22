@@ -405,6 +405,7 @@ namespace DracoProtos.Serializer
 				Type elementType = clazz.GetElementType();
 				return this.ReadStaticArray(elementType, elementType.IsPrimitive);
 			}
+            
 			FObject fobject = Activator.CreateInstance(clazz) as FObject;
 			if (fobject == null)
 			{
