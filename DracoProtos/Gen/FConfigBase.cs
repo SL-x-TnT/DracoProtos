@@ -34,6 +34,7 @@ namespace DracoProtos
 			this.desiredGpsAccuracy = stream.ReadFloat();
 			this.distanceToLoadTiles = stream.ReadFloat();
 			this.distanceToUnloadTiles = stream.ReadFloat();
+            this.dummy = stream.ReadBoolean();
 			this.encounterDelaySinceStartup = stream.ReadInt32();
 			this.fogEndDistance = stream.ReadFloat();
 			this.fogStartDistance = stream.ReadFloat();
@@ -101,7 +102,8 @@ namespace DracoProtos
 			stream.WriteFloat(this.desiredGpsAccuracy);
 			stream.WriteFloat(this.distanceToLoadTiles);
 			stream.WriteFloat(this.distanceToUnloadTiles);
-			stream.WriteInt32(this.encounterDelaySinceStartup);
+            stream.WriteBoolean(this.dummy);
+            stream.WriteInt32(this.encounterDelaySinceStartup);
 			stream.WriteFloat(this.fogEndDistance);
 			stream.WriteFloat(this.fogStartDistance);
 			stream.WriteFloat(this.goOrbitDistance);
@@ -264,5 +266,7 @@ namespace DracoProtos
 		public int defenderBaseAttackBeforeChargedMin;
 
 		public int defenderBaseAttackBeforeChargedMax;
+
+        private bool dummy;
 	}
 }
