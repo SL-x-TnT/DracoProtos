@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /Proxy/Program.cs
 /Proxy/Proxy.csproj
+/venv/
