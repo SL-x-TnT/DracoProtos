@@ -1,5 +1,4 @@
 using DracoProtos.Core.Base;
-using DracoProtos.Core.Objects;
 using System;
 
 namespace DracoProtos.Core.Objects
