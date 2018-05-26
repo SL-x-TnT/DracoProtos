@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class ProductLotBase : FObject
+    public abstract class ProductLotBase : IFObject
 	{
         public int price;
         public int qty;

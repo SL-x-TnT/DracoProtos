@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBaseItemUpdateBase : FObject
+    public abstract class FBaseItemUpdateBase : IFObject
 	{
 		public virtual void ReadExternal(FInputStream stream)
 		{

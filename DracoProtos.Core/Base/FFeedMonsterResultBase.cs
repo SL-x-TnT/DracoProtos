@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FFeedMonsterResultBase : FObject
+    public abstract class FFeedMonsterResultBase : IFObject
 	{
         public long feedLiveTime;
 

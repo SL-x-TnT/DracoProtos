@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class ExtraPackBase : FObject
+    public abstract class ExtraPackBase : IFObject
     {
         public int price;
         public int wizardBattles;

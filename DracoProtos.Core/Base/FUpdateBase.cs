@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FUpdateBase : FObject
+    public abstract class FUpdateBase : IFObject
 	{
         public List<FBaseItemUpdate> items;
         public long serverTime;

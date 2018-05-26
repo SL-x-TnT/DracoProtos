@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FWeeklyQuestBase : FObject
+    public abstract class FWeeklyQuestBase : IFObject
 	{
         public bool allOpen;
         public bool completed;
@@ -11,7 +11,7 @@ namespace DracoProtos.Core.Base
         public List<int> digFragments;
         public int extraQuestsAvailable;
         public int nextWeeklyQuestIn;
-        public Dictionary<int, sbyte[]> openFragments;
+        public Dictionary<int, sbyte> openFragments;
         public int shovelsAvailable;
         public int sideFragmentNumber;
 
@@ -23,7 +23,7 @@ namespace DracoProtos.Core.Base
 			this.digFragments = stream.ReadStaticList<int>(true);
             this.extraQuestsAvailable = stream.ReadInt32();
 			this.nextWeeklyQuestIn = stream.ReadInt32();
-			this.openFragments = stream.ReadStaticMap<int, sbyte[]>(true, true);
+			this.openFragments = stream.ReadStaticMap<int, sbyte>(true, true);
             this.shovelsAvailable = stream.ReadInt32();
 			this.sideFragmentNumber = stream.ReadInt32();
 		}

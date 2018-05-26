@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCollectorRatingBase : FObject
+    public abstract class FCollectorRatingBase : IFObject
     {
         public List<FCollectorRatingListRecord> topRecords;
 

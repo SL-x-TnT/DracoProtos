@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FTileBase : FObject
+    public abstract class FTileBase : IFObject
 	{
         public string dungeonId;
         public Tile tile;

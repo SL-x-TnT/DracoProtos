@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FAltarBase : FObject
+    public abstract class FAltarBase : IFObject
 	{
         public string ownerId;
         public bool sharedWithEmptyPassword;

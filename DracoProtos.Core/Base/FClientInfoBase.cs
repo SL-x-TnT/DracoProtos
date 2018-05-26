@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FClientInfoBase : FObject
+    public abstract class FClientInfoBase : IFObject
 	{
         public string deviceModel;
         public string googleAdvertisingId;

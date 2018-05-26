@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FStudentBase : FObject 
+    public abstract class FStudentBase : IFObject 
     {
         public AllianceType? allianceType;
         public int level;

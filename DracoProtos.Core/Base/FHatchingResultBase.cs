@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FHatchingResultBase : FObject
+    public abstract class FHatchingResultBase : IFObject
 	{
         public FAvaUpdate avaUpdate;
         public FCreadex cReadex;

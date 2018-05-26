@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class PotionConfigBase : FObject
+    public abstract class PotionConfigBase : IFObject
 	{
         public Dictionary<ItemType, int> heals;
         public Dictionary<ItemType, float> resurrections;

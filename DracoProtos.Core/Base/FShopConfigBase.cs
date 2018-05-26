@@ -5,7 +5,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FShopConfigBase : FObject
+    public abstract class FShopConfigBase : IFObject
 	{
         public Dictionary<ArtifactName, int> artifacts;
         public ProductLot bagUpgrade;

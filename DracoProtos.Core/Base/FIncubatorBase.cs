@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FIncubatorBase : FObject
+    public abstract class FIncubatorBase : IFObject
 	{
         public string eggId;
         public string incubatorId;

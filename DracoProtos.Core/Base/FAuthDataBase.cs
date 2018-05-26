@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FAuthDataBase : FObject
+    public abstract class FAuthDataBase : IFObject
 	{
         public FUserInfo info;
 

@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class AuthDataBase : FObject
+    public abstract class AuthDataBase : IFObject
 	{
         public AuthType authType;
         public string profileId;

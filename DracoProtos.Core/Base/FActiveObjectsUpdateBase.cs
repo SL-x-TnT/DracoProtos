@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FActiveObjectsUpdateBase : FObject
+    public abstract class FActiveObjectsUpdateBase : IFObject
 	{
         public int arenaQuantity;
         public int coins;

@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class TileBase : FObject
+    public abstract class TileBase : IFObject
 	{
         public int zoom;
         public int x;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FTipsBase : FObject
+    public abstract class FTipsBase : IFObject
     {
         public bool laterAvailable;
         public List<string> messages;

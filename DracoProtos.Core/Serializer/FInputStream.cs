@@ -406,7 +406,7 @@ namespace DracoProtos.Core.Serializer
 				return this.ReadStaticArray(elementType, elementType.IsPrimitive);
 			}
             
-			FObject fobject = Activator.CreateInstance(clazz) as FObject;
+			IFObject fobject = Activator.CreateInstance(clazz) as IFObject;
 			if (fobject == null)
 			{
 				throw new Exception("Can't instantiate FObject of class: " + clazz);

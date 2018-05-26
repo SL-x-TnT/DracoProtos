@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FResistModifyDetailsBase : FObject
+    public abstract class FResistModifyDetailsBase : IFObject
     {
         public int matchingCreatures;
         public float resultResistMax;

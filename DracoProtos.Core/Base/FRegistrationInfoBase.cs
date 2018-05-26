@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FRegistrationInfoBase : FObject
+    public abstract class FRegistrationInfoBase : IFObject
 	{
         public string age;
         public string gender;

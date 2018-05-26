@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FUserHatchingInfoBase : FObject
+    public abstract class FUserHatchingInfoBase : IFObject
 	{
         public List<FEgg> eggs;
         public List<FIncubator> incubators;

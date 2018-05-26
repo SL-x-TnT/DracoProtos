@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FScoutRequestBase : FObject
+    public abstract class FScoutRequestBase : IFObject
 	{
         public GeoCoords scoutCoords;
         public FClientRequest clientRequest;

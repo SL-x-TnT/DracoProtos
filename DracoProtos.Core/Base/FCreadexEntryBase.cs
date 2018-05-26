@@ -5,7 +5,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCreadexEntryBase : FObject
+    public abstract class FCreadexEntryBase : IFObject
 	{
         public int caughtQuantity;
         public List<FCreadexChain> chain;

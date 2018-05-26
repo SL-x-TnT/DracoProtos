@@ -359,11 +359,11 @@ namespace DracoProtos.Core.Serializer
 			}
 			else
 			{
-				if (!(o is FObject))
+				if (!(o is IFObject))
 				{
 					throw new Exception("can't write unknown object: " + type);
 				}
-				(o as FObject).WriteExternal(this);
+				(o as IFObject).WriteExternal(this);
 			}
 		}
 

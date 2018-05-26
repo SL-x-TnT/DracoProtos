@@ -5,7 +5,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBagUpdateBase : FObject
+    public abstract class FBagUpdateBase : IFObject
 	{
         public int allowedItemsSize;
         public List<FBagItem> items;

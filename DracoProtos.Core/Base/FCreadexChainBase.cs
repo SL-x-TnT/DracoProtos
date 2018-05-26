@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCreadexChainBase : FObject
+    public abstract class FCreadexChainBase : IFObject
 	{
         public bool caught;
         public CreatureType creature;

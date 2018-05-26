@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FDefenderDetailsBase : FObject
+    public abstract class FDefenderDetailsBase : IFObject
 	{
         public AllianceType allianceType;
         public string creatureAlias;

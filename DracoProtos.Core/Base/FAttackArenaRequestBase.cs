@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FAttackArenaRequestBase : FObject
+    public abstract class FAttackArenaRequestBase : IFObject
 	{
         public FBuildingRequest buildingRequest;
         public GeoCoords coords;

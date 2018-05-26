@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FEggBase : FObject
+    public abstract class FEggBase : IFObject
 	{
         public ItemType eggType;
         public string id;

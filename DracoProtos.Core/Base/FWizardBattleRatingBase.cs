@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FWizardBattleRatingBase : FObject
+    public abstract class FWizardBattleRatingBase : IFObject
     {
         public List<FWizardBattleRatingListRecord> topRecords;
 

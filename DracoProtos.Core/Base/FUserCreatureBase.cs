@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FUserCreatureBase : FObject
+    public abstract class FUserCreatureBase : IFObject
 	{
         public string alias;
         public int attackValue;

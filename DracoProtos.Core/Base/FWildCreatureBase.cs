@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FWildCreatureBase : FObject
+    public abstract class FWildCreatureBase : IFObject
 	{
         public bool chest;
         public GeoCoords coords;

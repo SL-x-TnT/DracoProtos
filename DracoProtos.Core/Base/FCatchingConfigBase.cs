@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCatchingConfigBase : FObject
+    public abstract class FCatchingConfigBase : IFObject
 	{
         public Dictionary<ItemType, float> catchChances;
         public float chanceToAttack;

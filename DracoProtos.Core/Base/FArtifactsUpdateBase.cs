@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FArtifactsUpdateBase : FObject
+    public abstract class FArtifactsUpdateBase : IFObject
 	{
         public List<ArtifactName> artifacts;
         public int artifactsBagSize;

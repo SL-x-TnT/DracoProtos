@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class GeoCoordsWithAccuracyBase : FObject
+    public abstract class GeoCoordsWithAccuracyBase : IFObject
     {
         public float horizontalAccuracy;
         public double latitude;

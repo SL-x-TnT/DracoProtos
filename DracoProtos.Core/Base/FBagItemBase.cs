@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBagItemBase : FObject
+    public abstract class FBagItemBase : IFObject
 	{
         public int count;
         public bool removable;

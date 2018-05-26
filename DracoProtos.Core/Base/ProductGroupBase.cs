@@ -5,7 +5,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class ProductGroupBase : FObject
+    public abstract class ProductGroupBase : IFObject
 	{
         public ItemType itemType;
         public List<ProductLot> productLots;

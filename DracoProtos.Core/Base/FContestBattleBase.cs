@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FContestBattleBase : FObject
+    public abstract class FContestBattleBase : IFObject
     {
         public float hpPercent;
         public string nickname;

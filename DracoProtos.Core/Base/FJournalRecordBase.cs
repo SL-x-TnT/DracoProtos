@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FJournalRecordBase : FObject
+    public abstract class FJournalRecordBase : IFObject
 	{
         public long date;
         public Dictionary<string, string> details;

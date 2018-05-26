@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FPurchaseResultBase : FObject
+    public abstract class FPurchaseResultBase : IFObject
     {
         public FAvaUpdate avaUpdate;
         public FCreadex cReadex;

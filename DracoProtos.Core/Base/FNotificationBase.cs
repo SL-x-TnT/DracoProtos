@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FNotificationBase : FObject
+    public abstract class FNotificationBase : IFObject
     {
         public string message;
         public string title;

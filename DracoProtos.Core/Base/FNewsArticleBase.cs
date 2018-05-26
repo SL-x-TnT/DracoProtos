@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FNewsArticleBase : FObject
+    public abstract class FNewsArticleBase : IFObject
     {
         public HashSet<string> activeNewsIds;
         public int activeOfferCurrent;

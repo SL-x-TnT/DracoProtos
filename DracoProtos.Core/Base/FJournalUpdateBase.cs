@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FJournalUpdateBase : FObject
+    public abstract class FJournalUpdateBase : IFObject
 	{
         public List<FJournalRecord> records;
 

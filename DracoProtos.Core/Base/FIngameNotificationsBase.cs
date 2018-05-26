@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FIngameNotificationsBase : FObject
+    public abstract class FIngameNotificationsBase : IFObject
     {
         public List<FNotification> notifications;
 

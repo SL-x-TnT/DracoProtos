@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FArenaBase : FObject
+    public abstract class FArenaBase : IFObject
 	{
         public AllianceType? allianceType;
         public int combinedName;

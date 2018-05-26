@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FFightCreatureBase : FObject
+    public abstract class FFightCreatureBase : IFObject
 	{
         public string alias;
         public bool attacker;

@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FFightRequestBase : FObject
+    public abstract class FFightRequestBase : IFObject
 	{
         public string battleId;
         public int chargedAttacksByAi;

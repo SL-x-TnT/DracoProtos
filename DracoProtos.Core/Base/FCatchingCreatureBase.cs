@@ -5,7 +5,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCatchingCreatureBase : FObject
+    public abstract class FCatchingCreatureBase : IFObject
 	{
         public bool aggressive;
         public CreatureType candyType;

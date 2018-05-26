@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class BuffConfigBase : FObject
+    public abstract class BuffConfigBase : IFObject
 	{
         public long durationMs;
         public bool isOffer;

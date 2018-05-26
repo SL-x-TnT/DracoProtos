@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FFightItemBase : FObject
+    public abstract class FFightItemBase : IFObject
 	{
         public float attackerDamageReceived;
         public string attackerId;

@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FOpenChestResultBase : FObject
+    public abstract class FOpenChestResultBase : IFObject
 	{
         public FLoot levelUpLoot;
         public FLoot loot;

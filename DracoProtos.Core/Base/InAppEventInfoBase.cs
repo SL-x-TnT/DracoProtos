@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class InAppEventInfoBase : FObject
+    public abstract class InAppEventInfoBase : IFObject
 	{
         public Dictionary<string, string> eventItems;
         public InAppEventType eventType;

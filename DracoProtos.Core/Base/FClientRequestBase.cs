@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FClientRequestBase : FObject
+    public abstract class FClientRequestBase : IFObject
 	{
         public GeoCoordsWithAccuracy coordsWithAccuracy;
         public int currentUtcOffsetSeconds;

@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class IdAndCoordsBase : FObject
+    public abstract class IdAndCoordsBase : IFObject
 	{
         public GeoCoords coords;
         public string id;

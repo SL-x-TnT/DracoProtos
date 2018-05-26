@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FContestUpdateBase : FObject
+    public abstract class FContestUpdateBase : IFObject
     {
         public List<FContestBattle> battles;
         public bool canStart;

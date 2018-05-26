@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FServiceErrorBase : FObject
+    public abstract class FServiceErrorBase : IFObject
     {
         public object[] args;
         public string cause;

@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBuddyBase : FObject
+    public abstract class FBuddyBase : IFObject
 	{
         public string alias;
         public CreatureType candyType;

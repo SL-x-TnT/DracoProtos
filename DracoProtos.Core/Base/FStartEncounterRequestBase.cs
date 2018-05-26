@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FStartEncounterRequestBase : FObject
+    public abstract class FStartEncounterRequestBase : IFObject
 	{
         public string attackerId;
         public string defenderId;

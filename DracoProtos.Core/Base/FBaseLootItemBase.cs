@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBaseLootItemBase : FObject
+    public abstract class FBaseLootItemBase : IFObject
 	{
         public int qty;
 

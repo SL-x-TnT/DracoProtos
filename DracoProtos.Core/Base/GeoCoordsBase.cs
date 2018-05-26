@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class GeoCoordsBase : FObject
+    public abstract class GeoCoordsBase : IFObject
 	{
         public double latitude;
         public double longitude;

@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBuffBase : FObject
+    public abstract class FBuffBase : IFObject
 	{
         public BuffType buffType;
         public long duration;

@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FActiveObjectBase : FObject
+    public abstract class FActiveObjectBase : IFObject
 	{
         public AllianceType? allianceType;
         public string arenaId;

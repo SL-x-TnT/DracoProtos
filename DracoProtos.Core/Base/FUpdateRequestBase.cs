@@ -5,7 +5,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FUpdateRequestBase : FObject
+    public abstract class FUpdateRequestBase : IFObject
 	{
         public bool blackScreen;
         public ClientPlatform clientPlatform;

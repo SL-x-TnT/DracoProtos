@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FTileStateBase : FObject
+    public abstract class FTileStateBase : IFObject
 	{
         public List<FBuilding> buildings;
         public long time;

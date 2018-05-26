@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FNicknameValidationResultBase : FObject
+    public abstract class FNicknameValidationResultBase : IFObject
 	{
         public FNicknameValidationError? error;
         public string suggestedNickname;

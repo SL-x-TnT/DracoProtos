@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FWizardBattleInfoBase : FObject
+    public abstract class FWizardBattleInfoBase : IFObject
 	{
         public int extraBattles;
         public int limit;

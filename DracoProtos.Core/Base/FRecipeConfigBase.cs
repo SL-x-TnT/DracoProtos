@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FRecipeConfigBase : FObject
+    public abstract class FRecipeConfigBase : IFObject
     {
         public int duration;
         public int percent;

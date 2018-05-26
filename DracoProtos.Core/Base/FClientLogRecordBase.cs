@@ -3,7 +3,7 @@
 namespace DracoProtos.Core.Base
 {
 
-    public abstract class FClientLogRecordBase : FObject
+    public abstract class FClientLogRecordBase : IFObject
     {
         public string clientStartTime;
         public float clientTime;

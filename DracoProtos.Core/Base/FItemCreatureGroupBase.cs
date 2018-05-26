@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FItemCreatureGroupBase : FObject
+    public abstract class FItemCreatureGroupBase : IFObject
     {
         public bool active;
         public CreatureType creature;

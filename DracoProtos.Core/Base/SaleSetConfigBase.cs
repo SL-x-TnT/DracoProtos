@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class SaleSetConfigBase : FObject
+    public abstract class SaleSetConfigBase : IFObject
     {
         public Dictionary<ItemType, int> items;
         public int price;

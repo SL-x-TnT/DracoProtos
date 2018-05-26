@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FMentorshipInfoBase : FObject
+    public abstract class FMentorshipInfoBase : IFObject
     {
         public bool canBeMentor;
         public bool canChooseMentor;

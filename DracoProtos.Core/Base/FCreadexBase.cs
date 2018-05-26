@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCreadexBase : FObject
+    public abstract class FCreadexBase : IFObject
 	{
         public List<FCreadexEntry> entries;
 

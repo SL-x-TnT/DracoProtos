@@ -4,7 +4,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FMentorshipAwardUpdateBase : FObject
+    public abstract class FMentorshipAwardUpdateBase : IFObject
     {
         public FCreadex cReadex;
         public CreatureType creatureType;

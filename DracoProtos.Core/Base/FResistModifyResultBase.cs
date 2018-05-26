@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FResistModifyResultBase : FObject
+    public abstract class FResistModifyResultBase : IFObject
     {
         public FUserCreature creature;
         public FResistModifyDetails modifyDetails;

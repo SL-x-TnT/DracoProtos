@@ -2,7 +2,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCreatureRequestBase : FObject
+    public abstract class FCreatureRequestBase : IFObject
 	{
         public string id;
         public bool veryFirst;

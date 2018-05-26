@@ -3,7 +3,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FPitstopBase : FObject
+    public abstract class FPitstopBase : IFObject
 	{
         public bool cooldown;
         public string lureBy;

@@ -5,7 +5,7 @@ using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FDailyQuestBase : FObject
+    public abstract class FDailyQuestBase : IFObject
 	{
         public int count;
         public ElementType? elementType;

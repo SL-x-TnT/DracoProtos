@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBaseRatingRecordBase : FObject
+    public abstract class FBaseRatingRecordBase : IFObject
     {
         public int level;
         public string nickName;
