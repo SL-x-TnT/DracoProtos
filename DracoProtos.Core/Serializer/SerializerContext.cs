@@ -127,7 +127,7 @@ namespace DracoProtos.Core.Serializer
 			throw new Exception("Wrong type: " + array.GetType());
 		}
 
-		public static readonly SerializerContext Context = new SerializerContext("portal", FGameObjects.CLASSES, 839333433u);
+		public static readonly SerializerContext Context = new SerializerContext("portal", FGameObjects.CLASSES, FGameObjects.ProtocolVersion);
 
 		public const sbyte NULL = 0;
 
