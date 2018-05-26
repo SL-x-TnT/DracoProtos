@@ -1,5 +1,6 @@
 using DracoProtos.Core.Base;
 using DracoProtos.Core.Enums;
+using DracoProtos.Core.Extensions;
 using System.Collections.Generic;
 
 namespace DracoProtos.Core.Objects

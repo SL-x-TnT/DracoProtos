@@ -1,6 +1,6 @@
 using DracoProtos.Core.Enums;
 
-namespace DracoProtos.Core.Objects
+namespace DracoProtos.Core.Extensions
 {
     public static class ItemTypeEx
 	{
