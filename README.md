@@ -3,8 +3,6 @@ DracoProtos.Core [![NuGet](https://img.shields.io/nuget/v/DracoProtos.Core.svg?m
 
 ### Protos files here https://github.com/Furtif/DracoProtos/tree/protos
 
-# Usage
-
 #### Libraries
 
 If you don't want to compile DracoProtos but instead use it directly, check out the following repository.
@@ -19,6 +17,7 @@ We are following [semantic versioning](http://semver.org/) for DracoProtos.  Eve
 
 | Version      | App Version                 | Extra                     |
 |--------------|-----------------------------|---------------------------|
+| 1.0.2        | 1.8   (11808-389771870)     | beta minor fix            |
 | 1.0.1        | 1.8   (11808-389771870)     | beta                      |
 
 ### CREDITS
