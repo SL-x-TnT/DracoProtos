@@ -14,8 +14,6 @@ namespace DracoProtos.Core.Objects
 		{
 			return new FClientRequest
 			{
-                //TODO:
-                //coords = GeoCoords.UNKNOWN,
                 coordsWithAccuracy = new GeoCoordsWithAccuracy { horizontalAccuracy = 0, latitude = 0.0, longitude = 0.0 }
             };
 		}

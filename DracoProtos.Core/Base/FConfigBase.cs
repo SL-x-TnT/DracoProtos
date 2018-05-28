@@ -72,7 +72,7 @@ namespace DracoProtos.Core.Base
         public float monsterLevelPerUserLevel;
         public int monsterMaxLevel;
         public float newsCheckIntervalSeconds;
-        public HashSet<sbyte> notEmulatorModelHashes; //TODO:
+        public HashSet<sbyte[]> notEmulatorModelHashes;
         public float oppositeDodgeTimeoutSeconds;
         public Dictionary<PersonalizedStop, int> personalizationPriceMap;
         public PotionConfig potionConfig;
@@ -168,7 +168,7 @@ namespace DracoProtos.Core.Base
             this.monsterLevelPerUserLevel = stream.ReadFloat();
             this.monsterMaxLevel = stream.ReadInt32();
             this.newsCheckIntervalSeconds = stream.ReadFloat();
-            this.notEmulatorModelHashes = stream.ReadStaticHashSet<sbyte>(true); //TODO:
+            this.notEmulatorModelHashes = stream.ReadStaticHashSet<sbyte[]>(true);
             this.oppositeDodgeTimeoutSeconds = stream.ReadFloat();
             this.personalizationPriceMap = stream.ReadStaticMap<PersonalizedStop, int>(true, true);
             this.potionConfig = (PotionConfig)stream.ReadStaticObject(typeof(PotionConfig));
@@ -265,7 +265,7 @@ namespace DracoProtos.Core.Base
             stream.WriteFloat(this.monsterLevelPerUserLevel);
             stream.WriteInt32(this.monsterMaxLevel);
             stream.WriteFloat(this.newsCheckIntervalSeconds);
-            stream.WriteDynamicObject(this.notEmulatorModelHashes); //TODO:
+            stream.WriteStaticObject(this.notEmulatorModelHashes);
             stream.WriteFloat(this.oppositeDodgeTimeoutSeconds);
             stream.WriteStaticMap(this.personalizationPriceMap, true, true);
             stream.WriteStaticObject(this.potionConfig);

@@ -11,7 +11,7 @@ namespace DracoProtos.Core.Base
         public ClientPlatform clientPlatform;
         public FClientRequest clientRequest;
         public ClientScreen clientScreen;
-        public sbyte configCacheHash; //TODO:
+        public sbyte[] configCacheHash;
         public string language;
         public Dictionary<FTile, long> tilesCache;
         public FBuildingRequest updateBuilding;
@@ -25,7 +25,7 @@ namespace DracoProtos.Core.Base
 			this.clientPlatform = (ClientPlatform)stream.ReadEnum(typeof(ClientPlatform));
 			this.clientRequest = (FClientRequest)stream.ReadStaticObject(typeof(FClientRequest));
             this.clientScreen = (ClientScreen)stream.ReadDynamicObject();
-            this.configCacheHash = stream.ReadSByte(); //TODO:
+            this.configCacheHash = (sbyte[])stream.ReadDynamicObject();
             this.language = (string)stream.ReadDynamicObject();
             this.tilesCache = stream.ReadStaticMap<FTile, long>(true, true);
             this.updateBuilding = (FBuildingRequest)stream.ReadDynamicObject();
@@ -39,7 +39,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.clientPlatform);
 			stream.WriteStaticObject(this.clientRequest);
             stream.WriteDynamicObject(this.clientScreen);
-            stream.WriteSByte(this.configCacheHash); //TODO:
+            stream.WriteDynamicObject(this.configCacheHash);
             stream.WriteUtfString(this.language);
             stream.WriteStaticMap(this.tilesCache, true, true);
             stream.WriteDynamicObject(this.updateBuilding);
