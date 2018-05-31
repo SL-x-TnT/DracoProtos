@@ -2,9 +2,7 @@ using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-#pragma warning disable CS0659 // Le type se substitue à Object.Equals(object o) mais pas à Object.GetHashCode()
     public class FBagUpdate : FBagUpdateBase
-#pragma warning restore CS0659 // Le type se substitue à Object.Equals(object o) mais pas à Object.GetHashCode()
     {
 
 		public override bool Equals(object obj)
@@ -21,5 +19,11 @@ namespace DracoProtos.Core.Objects
 		{
 			return !object.Equals(left, right);
 		}
-	}
+
+        public override int GetHashCode()
+        {
+            //TODO:
+            return 0;
+        }
+    }
 }
