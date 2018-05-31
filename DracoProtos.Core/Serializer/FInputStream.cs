@@ -181,7 +181,7 @@ namespace DracoProtos.Core.Serializer
 			{
 				sbyte id2 = this.ReadSByte();
 				Type arrayPrimitiveType = SerializerContext.GetArrayPrimitiveType(id2);
-				return this.ReadStaticArray(arrayPrimitiveType, true);
+                return this.ReadStaticArray(arrayPrimitiveType, staticComponent /*true*/);
 			}
 			throw new Exception("Object id is not array: " + id);
 		}
@@ -327,7 +327,7 @@ namespace DracoProtos.Core.Serializer
 			sbyte b = this.ReadSByte();
 			if ((int)b == 0)
 			{
-				return null;
+                return null;
 			}
 			if ((int)b == 2)
 			{
@@ -419,7 +419,7 @@ namespace DracoProtos.Core.Serializer
 			}
 			catch (Exception ex)
 			{
-				throw ex;
+                throw ex;
 			}
 			return result;
 		}

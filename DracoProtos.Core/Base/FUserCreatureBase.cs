@@ -73,7 +73,7 @@ namespace DracoProtos.Core.Base
             this.permanent = stream.ReadBoolean();
             this.possibleEvolutions = stream.ReadStaticMap<CreatureType, int>(true, true);
             this.resist = stream.ReadFloat();
-            this.resistFor = (ElementType)stream.ReadDynamicObject();
+            this.resistFor = (ElementType)stream.ReadEnum(typeof(ElementType));
             this.tier = stream.ReadInt32();
 			this.staminaValue = stream.ReadInt32();
 			this.totalHp = stream.ReadFloat();
@@ -111,7 +111,7 @@ namespace DracoProtos.Core.Base
             stream.WriteBoolean(this.permanent);
             stream.WriteStaticMap(this.possibleEvolutions, true, true);
             stream.WriteFloat(this.resist);
-            stream.WriteDynamicObject(this.resistFor);
+            stream.WriteEnum(this.resistFor);
 			stream.WriteInt32(this.tier);
 			stream.WriteInt32(this.staminaValue);
 			stream.WriteFloat(this.totalHp);

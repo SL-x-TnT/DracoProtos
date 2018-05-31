@@ -69,25 +69,25 @@ namespace DracoProtos.Core.Serializer
 
 		public static Type GetArrayPrimitiveType(sbyte id)
 		{
-			switch (id)
-			{
-			case 1:
-				return typeof(byte);
-			case 2:
-				return typeof(short);
-			case 3:
-				return typeof(int);
-			case 4:
-				return typeof(long);
-			case 5:
-				return typeof(float);
-			case 6:
-				return typeof(double);
-			case 7:
-				return typeof(bool);
-			default:
-				throw new Exception("Wrong id: " + id);
-			}
+            switch (id)
+            {
+                case 1:
+                    return typeof(byte);
+                case 2:
+                    return typeof(short);
+                case 3:
+                    return typeof(int);
+                case 4:
+                    return typeof(long);
+                case 5:
+                    return typeof(float);
+                case 6:
+                    return typeof(double);
+                case 7:
+                    return typeof(bool);
+                default:
+                    throw new Exception("Wrong id: " + id);
+            }
 		}
 
 		public static sbyte GetArrayPrimitiveTypeId(object array)
