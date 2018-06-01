@@ -8,6 +8,6 @@ namespace DracoProtos.Core.Objects
 		{
 		}
 
-		private bool isHandled;
+		//private bool isHandled;
 	}
 }

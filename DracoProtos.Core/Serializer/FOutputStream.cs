@@ -117,8 +117,8 @@ namespace DracoProtos.Core.Serializer
 
 		public void WriteVector2(Vector2 v)
 		{
-			this.dataStream.Write(v.x);
-			this.dataStream.Write(v.y);
+			this.dataStream.Write(v.X);
+			this.dataStream.Write(v.Y);
 		}
 
 		public void WriteEnum(object value)

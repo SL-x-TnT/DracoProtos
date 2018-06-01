@@ -10,6 +10,6 @@ namespace DracoProtos.Core.Objects
 
 		private const string MAP_VERSION_PREF = "MAP_VERSION_PREF";
 
-		private long _timeDiff;
+		//private long _timeDiff;
 	}
 }

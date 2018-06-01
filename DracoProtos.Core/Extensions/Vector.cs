@@ -4,26 +4,26 @@ namespace DracoProtos.Core.Extensions
 {
     public class Vector2
     {
-        public float x { get; set; }
-        public float y { get; set; }
+        public float X { get; set; }
+        public float Y { get; set; }
 
         public Vector2(float x, float y)
         {
-            this.x = x;
-            this.y = y;
+            this.X = x;
+            this.Y = y;
         }
     }
 
    public class Vector3 : Vector2
    {
-        public float z { get; set; }
+        public float Z { get; set; }
 
         public Vector3(float x, float y, float z) : base(x, y)
         {
-            this.z = z;
+            this.Z = z;
         }
 
-        public Vector3 normalized
+        public Vector3 Normalized
         {
             get
             {
@@ -48,66 +48,66 @@ namespace DracoProtos.Core.Extensions
 
         public static float Distance(Vector3 a, Vector3 b)
         {
-            Vector3 vector = new Vector3(a.x - b.x, a.y - b.y, a.z - b.z);
-            return (float)Math.Sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
+            Vector3 vector = new Vector3(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+            return (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y + vector.Z * vector.Z);
         }
 
         public static float Dot(Vector3 lhs, Vector3 rhs)
         {
-            return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
+            return lhs.X * rhs.X + lhs.Y * rhs.Y + lhs.Z * rhs.Z;
         }
 
         public static float Magnitude(Vector3 vector)
         {
-            return (float)Math.Sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
+            return (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y + vector.Z * vector.Z);
         }
 
         public static Vector3 Cross(Vector3 lhs, Vector3 rhs)
         {
-            return new Vector3(lhs.y * rhs.z - lhs.z * rhs.y, lhs.z * rhs.x - lhs.x * rhs.z, lhs.x * rhs.y - lhs.y * rhs.x);
+            return new Vector3(lhs.Y * rhs.Z - lhs.Z * rhs.Y, lhs.Z * rhs.X - lhs.X * rhs.Z, lhs.X * rhs.Y - lhs.Y * rhs.X);
         }
 
         public static float SqrMagnitude(Vector3 vector)
         {
-            return vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
+            return vector.X * vector.X + vector.Y * vector.Y + vector.Z * vector.Z;
         }
 
-        public float sqrMagnitude
+        public float _sqrMagnitude
         {
             get
             {
-                return this.x * this.x + this.y * this.y + this.z * this.z;
+                return this.X * this.X + this.Y * this.Y + this.Z * this.Z;
             }
         }
 
         public static Vector3 operator +(Vector3 a, Vector3 b)
         {
-            return new Vector3(a.x + b.x, a.y + b.y, a.z + b.z);
+            return new Vector3(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
         }
 
         public static Vector3 operator -(Vector3 a, Vector3 b)
         {
-            return new Vector3(a.x - b.x, a.y - b.y, a.z - b.z);
+            return new Vector3(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
         }
 
         public static Vector3 operator -(Vector3 a)
         {
-            return new Vector3(-a.x, -a.y, -a.z);
+            return new Vector3(-a.X, -a.Y, -a.Z);
         }
 
         public static Vector3 operator *(Vector3 a, float d)
         {
-            return new Vector3(a.x * d, a.y * d, a.z * d);
+            return new Vector3(a.X * d, a.Y * d, a.Z * d);
         }
 
         public static Vector3 operator *(float d, Vector3 a)
         {
-            return new Vector3(a.x * d, a.y * d, a.z * d);
+            return new Vector3(a.X * d, a.Y * d, a.Z * d);
         }
 
         public static Vector3 operator /(Vector3 a, float d)
         {
-            return new Vector3(a.x / d, a.y / d, a.z / d);
+            return new Vector3(a.X / d, a.Y / d, a.Z / d);
         }
 
         public static bool operator ==(Vector3 lhs, Vector3 rhs)
