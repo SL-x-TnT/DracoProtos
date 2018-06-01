@@ -9,9 +9,9 @@ namespace DracoProtos.Core.Objects
 			return object.Equals(left, right);
 		}
 
-		public static bool operator !=(FCreadexEntry right, FCreadexEntry left)
+		public static bool operator !=(FCreadexEntry left, FCreadexEntry right)
 		{
-			return !object.Equals(right, left);
+			return !object.Equals(left, right);
 		}
 	}
 }
