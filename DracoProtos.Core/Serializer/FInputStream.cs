@@ -419,7 +419,8 @@ namespace DracoProtos.Core.Serializer
 			}
 			catch (Exception ex)
 			{
-                throw ex;
+                Exception err = new Exception(ex + "\r\nClasse bug: " + clazz + "\r\n");
+                throw err;
 			}
 			return result;
 		}
