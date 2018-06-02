@@ -8,7 +8,7 @@ namespace DracoProtos.Core.Base
         public ItemType eggType;
         public string id;
         public string incubatorId;
-        public ItemType incubatorType;
+        //public ItemType incubatorType;
         public bool isEggForRoost;
         public bool isHatching;
         public float passedDistance;
@@ -20,7 +20,7 @@ namespace DracoProtos.Core.Base
 			this.eggType = (ItemType)stream.ReadEnum(typeof(ItemType));
 			this.id = stream.ReadUtfString();
 			this.incubatorId = (string)stream.ReadDynamicObject();
-            this.incubatorType = (ItemType)stream.ReadDynamicObject();
+            //this.incubatorType = (ItemType)stream.ReadDynamicObject();
 			this.isEggForRoost = stream.ReadBoolean();
 			this.isHatching = stream.ReadBoolean();
 			this.passedDistance = stream.ReadFloat();
@@ -33,7 +33,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.eggType);
 			stream.WriteUtfString(this.id);
 			stream.WriteDynamicObject(this.incubatorId);
-            stream.WriteDynamicObject(this.incubatorType);
+            //stream.WriteDynamicObject(this.incubatorType);
 			stream.WriteBoolean(this.isEggForRoost);
 			stream.WriteBoolean(this.isHatching);
 			stream.WriteFloat(this.passedDistance);
