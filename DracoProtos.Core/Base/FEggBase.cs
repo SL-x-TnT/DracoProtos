@@ -5,22 +5,22 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FEggBase : IFObject
 	{
-        public ItemType eggType;
-        public string id;
-        public string incubatorId;
-        //public ItemType incubatorType;
-        public bool isEggForRoost;
-        public bool isHatching;
-        public float passedDistance;
-        public float totalDistance;
-        public long totalIncubationTime;
+		public string id;
+		public float totalDistance;
+		public float passedDistance;
+		public bool isHatching;
+		public string incubatorId;
+		public bool isEggForRoost;
+		public long totalIncubationTime;
+		public ItemType eggType;
+		public ItemType? incubatorType;
 
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.eggType = (ItemType)stream.ReadEnum(typeof(ItemType));
 			this.id = stream.ReadUtfString();
 			this.incubatorId = (string)stream.ReadDynamicObject();
-            //this.incubatorType = (ItemType)stream.ReadDynamicObject();
+			this.incubatorType = (ItemType?)stream.ReadDynamicObject();
 			this.isEggForRoost = stream.ReadBoolean();
 			this.isHatching = stream.ReadBoolean();
 			this.passedDistance = stream.ReadFloat();
@@ -33,7 +33,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.eggType);
 			stream.WriteUtfString(this.id);
 			stream.WriteDynamicObject(this.incubatorId);
-            //stream.WriteDynamicObject(this.incubatorType);
+			stream.WriteDynamicObject(this.incubatorType);
 			stream.WriteBoolean(this.isEggForRoost);
 			stream.WriteBoolean(this.isHatching);
 			stream.WriteFloat(this.passedDistance);
