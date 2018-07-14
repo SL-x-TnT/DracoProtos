@@ -1,37 +1,18 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FCatchCreatureResultBase : FBaseItemUpdate
 	{
-        public FAvaUpdate avaUpdate;
-        public ItemType? ballType;
-        public int candies;
-        public CreatureType? candyType;
-        public FCatchingConfig catching;
-        public bool caught;
-        public FCreadex creadex;
-        public CreatureType? creature;
-        public int dust;
-        public int expAccurate;
-        public int expCreatureExisting;
-        public int expCreatureNew;
-        public int expSpin;
-        public FLoot levelUpLoot;
-        public FLoot loot;
-        public bool runAway;
-        public int streakDust;
-        public FUserCreature userCreature;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.avaUpdate = (FAvaUpdate)stream.ReadStaticObject(typeof(FAvaUpdate));
 			this.ballType = (ItemType?)stream.ReadDynamicObject();
 			this.candies = stream.ReadInt32();
 			this.candyType = (CreatureType?)stream.ReadDynamicObject();
+			this.catchChance = stream.ReadFloat();
 			this.catching = (FCatchingConfig)stream.ReadDynamicObject();
 			this.caught = stream.ReadBoolean();
 			this.creadex = (FCreadex)stream.ReadDynamicObject();
@@ -55,6 +36,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.ballType);
 			stream.WriteInt32(this.candies);
 			stream.WriteDynamicObject(this.candyType);
+			stream.WriteFloat(this.catchChance);
 			stream.WriteDynamicObject(this.catching);
 			stream.WriteBoolean(this.caught);
 			stream.WriteDynamicObject(this.creadex);
@@ -70,5 +52,43 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.streakDust);
 			stream.WriteDynamicObject(this.userCreature);
 		}
+
+		public bool caught;
+
+		public bool runAway;
+
+		public int dust;
+
+		public CreatureType? candyType;
+
+		public int candies;
+
+		public int expCreatureNew;
+
+		public int expCreatureExisting;
+
+		public int expAccurate;
+
+		public int expSpin;
+
+		public int streakDust;
+
+		public float catchChance;
+
+		public CreatureType? creature;
+
+		public ItemType? ballType;
+
+		public FCatchingConfig catching;
+
+		public FAvaUpdate avaUpdate;
+
+		public FLoot loot;
+
+		public FLoot levelUpLoot;
+
+		public FUserCreature userCreature;
+
+		public FCreadex creadex;
 	}
 }

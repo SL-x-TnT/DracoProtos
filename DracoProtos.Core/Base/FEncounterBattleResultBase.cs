@@ -1,15 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FEncounterBattleResultBase : FBaseItemUpdate
 	{
-        public FLoot loot;
-        public float resultScreenDelay;
-        public bool victory;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.loot = (FLoot)stream.ReadStaticObject(typeof(FLoot));
@@ -24,5 +20,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.resultScreenDelay);
 			stream.WriteBoolean(this.victory);
 		}
+
+		public bool victory;
+
+		public FLoot loot;
+
+		public float resultScreenDelay;
 	}
 }

@@ -1,7 +1,7 @@
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Base;
 using DracoProtos.Core.Extensions;
-using System;
-using System.Collections.Generic;
 
 namespace DracoProtos.Core.Objects
 {
@@ -16,8 +16,7 @@ namespace DracoProtos.Core.Objects
 			return new GeoCoords
 			{
 				latitude = coordinates.latitude,
-				longitude = coordinates.longitude,
-				//horizontalAccuracy = coordinates.horizontalAccuracy
+				longitude = coordinates.longitude
 			};
 		}
 

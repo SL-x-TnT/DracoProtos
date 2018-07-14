@@ -1,18 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FObeliskDetailsBase : FBaseItemUpdate
 	{
-        public GeoCoords coords;
-        public FDailyQuest dailyQuest;
-        public FWeeklyQuestFragment fragment;
-        public string id;
-        public bool justOpened;
-        public FWeeklyQuest weeklyQuest;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.coords = (GeoCoords)stream.ReadStaticObject(typeof(GeoCoords));
@@ -33,5 +26,17 @@ namespace DracoProtos.Core.Base
 			stream.WriteBoolean(this.justOpened);
 			stream.WriteDynamicObject(this.weeklyQuest);
 		}
+
+		public string id;
+
+		public GeoCoords coords;
+
+		public bool justOpened;
+
+		public FDailyQuest dailyQuest;
+
+		public FWeeklyQuestFragment fragment;
+
+		public FWeeklyQuest weeklyQuest;
 	}
 }

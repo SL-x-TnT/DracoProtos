@@ -1,13 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FCreatureRequestBase : IFObject
 	{
-        public string id;
-        public bool veryFirst;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.id = stream.ReadUtfString();
 			this.veryFirst = stream.ReadBoolean();
@@ -18,5 +15,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.id);
 			stream.WriteBoolean(this.veryFirst);
 		}
+
+		public string id;
+
+		public bool veryFirst;
 	}
 }

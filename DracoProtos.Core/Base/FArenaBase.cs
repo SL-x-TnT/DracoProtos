@@ -1,15 +1,10 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FArenaBase : IFObject
 	{
-        public AllianceType? allianceType;
-        public int combinedName;
-        public float protectionTtl;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.allianceType = (AllianceType?)stream.ReadDynamicObject();
 			this.combinedName = stream.ReadInt32();
@@ -22,5 +17,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.combinedName);
 			stream.WriteFloat(this.protectionTtl);
 		}
+
+		public AllianceType? allianceType;
+
+		public int combinedName;
+
+		public float protectionTtl;
 	}
 }

@@ -1,13 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class GeoCoordsBase : IFObject
 	{
-        public double latitude;
-        public double longitude;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.latitude = stream.ReadDouble();
 			this.longitude = stream.ReadDouble();
@@ -18,5 +15,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteDouble(this.latitude);
 			stream.WriteDouble(this.longitude);
 		}
+
+		public double latitude;
+
+		public double longitude;
 	}
 }

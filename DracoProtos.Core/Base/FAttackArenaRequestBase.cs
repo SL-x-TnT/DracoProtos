@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -6,11 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FAttackArenaRequestBase : IFObject
 	{
-        public FBuildingRequest buildingRequest;
-        public GeoCoords coords;
-        public List<string> selectedCreatures;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.buildingRequest = (FBuildingRequest)stream.ReadStaticObject(typeof(FBuildingRequest));
 			this.coords = (GeoCoords)stream.ReadStaticObject(typeof(GeoCoords));
@@ -23,5 +19,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteStaticObject(this.coords);
 			stream.WriteStaticCollection(this.selectedCreatures, true);
 		}
+
+		public FBuildingRequest buildingRequest;
+
+		public List<string> selectedCreatures;
+
+		public GeoCoords coords;
 	}
 }

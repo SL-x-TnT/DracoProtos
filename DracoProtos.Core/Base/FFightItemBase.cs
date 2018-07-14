@@ -1,15 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FFightItemBase : IFObject
 	{
-        public float attackerDamageReceived;
-        public string attackerId;
-        public float defenderDamageReceived;
-        public string defenderId;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.attackerDamageReceived = stream.ReadFloat();
 			this.attackerId = stream.ReadUtfString();
@@ -24,5 +19,13 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.defenderDamageReceived);
 			stream.WriteUtfString(this.defenderId);
 		}
+
+		public string attackerId;
+
+		public string defenderId;
+
+		public float attackerDamageReceived;
+
+		public float defenderDamageReceived;
 	}
 }

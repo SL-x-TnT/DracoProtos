@@ -1,16 +1,10 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FBagItemBase : IFObject
 	{
-        public int count;
-        public bool removable;
-        public bool stack;
-        public ItemType type;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.count = stream.ReadInt32();
 			this.removable = stream.ReadBoolean();
@@ -25,5 +19,13 @@ namespace DracoProtos.Core.Base
 			stream.WriteBoolean(this.stack);
 			stream.WriteEnum(this.type);
 		}
+
+		public ItemType type;
+
+		public int count;
+
+		public bool removable;
+
+		public bool stack;
 	}
 }

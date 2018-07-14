@@ -1,16 +1,11 @@
-using System.Collections.Generic;
-using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FJournalRecordBase : IFObject
 	{
-        public long date;
-        public Dictionary<string, string> details;
-        public EventLogType type;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.date = stream.ReadInt64();
 			this.details = stream.ReadStaticMap<string, string>(true, true);
@@ -23,5 +18,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteStaticMap(this.details, true, true);
 			stream.WriteEnum(this.type);
 		}
+
+		public EventLogType type;
+
+		public long date;
+
+		public Dictionary<string, string> details;
 	}
 }

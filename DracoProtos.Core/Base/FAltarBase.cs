@@ -1,13 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FAltarBase : IFObject
 	{
-        public string ownerId;
-        public bool sharedWithEmptyPassword;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.ownerId = stream.ReadUtfString();
 			this.sharedWithEmptyPassword = stream.ReadBoolean();
@@ -18,5 +15,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.ownerId);
 			stream.WriteBoolean(this.sharedWithEmptyPassword);
 		}
+
+		public string ownerId;
+
+		public bool sharedWithEmptyPassword;
 	}
 }

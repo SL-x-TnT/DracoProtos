@@ -1,4 +1,4 @@
-using DracoProtos.Core.Enums;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Extensions
 {

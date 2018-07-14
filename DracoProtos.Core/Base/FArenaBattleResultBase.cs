@@ -1,28 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FArenaBattleResultBase : FBaseItemUpdate
 	{
-        public bool allyArena;
-        public int combinedName;
-        public int creaturesDefeated;
-        public int currentPrestige;
-        public int level;
-        public FLoot loot;
-        public int nextLevelPrestige;
-        public int prestigeBonusKillAll;
-        public int prestigeBonusKillStronger;
-        public int prestigeChange;
-        public int prestigeEarned;
-        public float resultScreenDelay;
-        public int userExpBonusKillAll;
-        public int userExpBonusKillStronger;
-        public int userExpGained;
-        public bool victory;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.allyArena = stream.ReadBoolean();
@@ -63,5 +46,37 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.userExpGained);
 			stream.WriteBoolean(this.victory);
 		}
+
+		public bool victory;
+
+		public bool allyArena;
+
+		public int combinedName;
+
+		public int userExpGained;
+
+		public FLoot loot;
+
+		public int creaturesDefeated;
+
+		public int level;
+
+		public int currentPrestige;
+
+		public int nextLevelPrestige;
+
+		public int prestigeChange;
+
+		public int prestigeEarned;
+
+		public int prestigeBonusKillStronger;
+
+		public int userExpBonusKillStronger;
+
+		public int prestigeBonusKillAll;
+
+		public int userExpBonusKillAll;
+
+		public float resultScreenDelay;
 	}
 }

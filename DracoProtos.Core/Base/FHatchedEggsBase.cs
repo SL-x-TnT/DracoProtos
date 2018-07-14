@@ -1,15 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FHatchedEggsBase : FBaseItemUpdate
 	{
-        public FEgg egg;
-        public string incubatorId;
-        public FLoot loot;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.egg = (FEgg)stream.ReadStaticObject(typeof(FEgg));
@@ -24,5 +20,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.incubatorId);
 			stream.WriteStaticObject(this.loot);
 		}
+
+		public string incubatorId;
+
+		public FEgg egg;
+
+		public FLoot loot;
 	}
 }

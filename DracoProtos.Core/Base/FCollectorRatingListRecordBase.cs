@@ -1,37 +1,30 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Objects;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCollectorRatingListRecordBase : IFObject
-    {
-        public int level;
-        public string nickName;
-        public int place;
-        public float score;
-        public int openCreaturesCount;
-        public int topQualityCreaturesCount;
-        public int topQualityPoweredupCreaturesCount;
+    public abstract class FCollectorRatingListRecordBase : FBaseRatingRecord
+	{
+		public override void ReadExternal(FInputStream stream)
+		{
+			base.ReadExternal(stream);
+			this.openCreaturesCount = stream.ReadInt32();
+			this.topQualityCreaturesCount = stream.ReadInt32();
+			this.topQualityPoweredupCreaturesCount = stream.ReadInt32();
+		}
 
-        public void ReadExternal(FInputStream stream)
-        {
-            this.level = stream.ReadInt32();
-            this.nickName = stream.ReadUtfString();
-            this.place = stream.ReadInt32();
-            this.score = stream.ReadFloat();
-            this.openCreaturesCount = stream.ReadInt32();
-            this.topQualityCreaturesCount = stream.ReadInt32();
-            this.topQualityPoweredupCreaturesCount = stream.ReadInt32();
-        }
+		public override void WriteExternal(FOutputStream stream)
+		{
+			base.WriteExternal(stream);
+			stream.WriteInt32(this.openCreaturesCount);
+			stream.WriteInt32(this.topQualityCreaturesCount);
+			stream.WriteInt32(this.topQualityPoweredupCreaturesCount);
+		}
 
-        public void WriteExternal(FOutputStream stream)
-        {
-            stream.WriteInt32(this.level);
-            stream.WriteUtfString(this.nickName);
-            stream.WriteInt32(this.place);
-            stream.WriteFloat(this.score);
-            stream.WriteInt32(this.openCreaturesCount);
-            stream.WriteInt32(this.topQualityCreaturesCount);
-            stream.WriteInt32(this.topQualityPoweredupCreaturesCount);
-        }
-    }
+		public int openCreaturesCount;
+
+		public int topQualityCreaturesCount;
+
+		public int topQualityPoweredupCreaturesCount;
+	}
 }

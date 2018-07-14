@@ -1,21 +1,13 @@
+﻿using System;
 using DracoProtos.Core.Base;
-using System;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FClientRequest : FClientRequestBase
+	public class FClientRequest : FClientRequestBase
 	{
 		public FClientRequest()
 		{
-			this.currentUtcOffsetSeconds = (int)TimeZoneInfo.Utc.GetUtcOffset(DateTime.Now).TotalSeconds;
-		}
-
-		public static FClientRequest CurrentLocation()
-		{
-			return new FClientRequest
-			{
-                coordsWithAccuracy = new GeoCoordsWithAccuracy { horizontalAccuracy = 0, latitude = 0.0, longitude = 0.0 }
-            };
+			this.currentUtcOffsetSeconds = (int)TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).TotalSeconds;
 		}
 
 		public override string ToString()

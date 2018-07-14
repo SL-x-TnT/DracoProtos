@@ -1,12 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FFeedMonsterResultBase : IFObject
 	{
-        public long feedLiveTime;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.feedLiveTime = stream.ReadInt64();
 		}
@@ -15,5 +13,7 @@ namespace DracoProtos.Core.Base
 		{
 			stream.WriteInt64(this.feedLiveTime);
 		}
+
+		public long feedLiveTime;
 	}
 }

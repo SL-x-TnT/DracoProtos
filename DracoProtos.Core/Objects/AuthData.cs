@@ -1,11 +1,10 @@
-using DracoProtos.Core.Base;
-using DracoProtos.Core.Enums;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
     public class AuthData : AuthDataBase
 	{
-		public bool IsDevice() 
+		public bool IsDevice()
 		{
 			return this.authType == AuthType.DEVICE;
 		}
@@ -18,15 +17,6 @@ namespace DracoProtos.Core.Objects
 		public override string ToString()
 		{
 			return string.Format("AuthType: {0}, ProfileId: {1}, TokenId: {2}", this.authType, this.profileId, this.tokenId);
-		}
-
-		public static AuthData Device(string id)
-		{
-			return new AuthData
-			{
-				authType = AuthType.DEVICE,
-				profileId = id
-			};
 		}
 	}
 }

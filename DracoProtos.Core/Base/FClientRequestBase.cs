@@ -1,15 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FClientRequestBase : IFObject
 	{
-        public GeoCoordsWithAccuracy coordsWithAccuracy;
-        public int currentUtcOffsetSeconds;
-        public long time;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.coordsWithAccuracy = (GeoCoordsWithAccuracy)stream.ReadStaticObject(typeof(GeoCoordsWithAccuracy));
 			this.currentUtcOffsetSeconds = stream.ReadInt32();
@@ -22,5 +18,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.currentUtcOffsetSeconds);
 			stream.WriteInt64(this.time);
 		}
+
+		public long time;
+
+		public int currentUtcOffsetSeconds;
+
+		public GeoCoordsWithAccuracy coordsWithAccuracy;
 	}
 }

@@ -1,16 +1,11 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FAllianceChooseRequestBase : FBaseItemUpdate
 	{
-        public int bonus;
-        public bool oneOption;
-        public AllianceType? recommendedType;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.bonus = stream.ReadInt32();
@@ -25,5 +20,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteBoolean(this.oneOption);
 			stream.WriteDynamicObject(this.recommendedType);
 		}
+
+		public AllianceType? recommendedType;
+
+		public int bonus;
+
+		public bool oneOption;
 	}
 }

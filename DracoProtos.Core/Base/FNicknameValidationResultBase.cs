@@ -1,14 +1,10 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FNicknameValidationResultBase : IFObject
 	{
-        public FNicknameValidationError? error;
-        public string suggestedNickname;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.error = (FNicknameValidationError?)stream.ReadDynamicObject();
 			this.suggestedNickname = (string)stream.ReadDynamicObject();
@@ -19,5 +15,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.error);
 			stream.WriteDynamicObject(this.suggestedNickname);
 		}
+
+		public FNicknameValidationError? error;
+
+		public string suggestedNickname;
 	}
 }

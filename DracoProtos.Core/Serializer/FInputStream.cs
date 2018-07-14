@@ -1,11 +1,11 @@
-using DracoProtos.Core.Extensions;
+﻿using DracoProtos.Core.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace DracoProtos.Core.Serializer
 {
-	public class FInputStream : IDisposable
+    public class FInputStream : IDisposable
 	{
 		public FInputStream(SerializerContext context, BinaryReader dataStream)
 		{
@@ -181,7 +181,7 @@ namespace DracoProtos.Core.Serializer
 			{
 				sbyte id2 = this.ReadSByte();
 				Type arrayPrimitiveType = SerializerContext.GetArrayPrimitiveType(id2);
-                return this.ReadStaticArray(arrayPrimitiveType, staticComponent /*true*/);
+				return this.ReadStaticArray(arrayPrimitiveType, true);
 			}
 			throw new Exception("Object id is not array: " + id);
 		}
@@ -327,7 +327,7 @@ namespace DracoProtos.Core.Serializer
 			sbyte b = this.ReadSByte();
 			if ((int)b == 0)
 			{
-                return null;
+				return null;
 			}
 			if ((int)b == 2)
 			{
@@ -405,22 +405,22 @@ namespace DracoProtos.Core.Serializer
 				Type elementType = clazz.GetElementType();
 				return this.ReadStaticArray(elementType, elementType.IsPrimitive);
 			}
-            
-			IFObject fobject = Activator.CreateInstance(clazz) as IFObject;
-			if (fobject == null)
+			IFObject IFObject = Activator.CreateInstance(clazz) as IFObject;
+			if (IFObject == null)
 			{
-				throw new Exception("Can't instantiate FObject of class: " + clazz);
+				throw new Exception("Can't instantiate IFObject of class: " + clazz);
 			}
 			object result;
 			try
 			{
-				fobject.ReadExternal(this);
-				result = fobject;
+				IFObject.ReadExternal(this);
+				result = IFObject;
 			}
-			catch (Exception ex)
+			catch (Exception exception)
 			{
-                Exception err = new Exception(ex + "\r\nClasse bug: " + clazz + "\r\n");
-                throw err;
+				//Debug.LogError("Cannot read static object: " + clazz);
+				//Debug.LogException(exception);
+				throw;
 			}
 			return result;
 		}

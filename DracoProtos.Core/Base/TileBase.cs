@@ -1,14 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class TileBase : IFObject
 	{
-        public int zoom;
-        public int x;
-        public int y;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.x = stream.ReadInt32();
 			this.y = stream.ReadInt32();
@@ -21,5 +17,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.y);
 			stream.WriteInt32(this.zoom);
 		}
+
+		public int zoom;
+
+		public int x;
+
+		public int y;
 	}
 }

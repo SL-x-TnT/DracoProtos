@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -6,9 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FCreadexBase : IFObject
 	{
-        public List<FCreadexEntry> entries;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.entries = stream.ReadStaticList<FCreadexEntry>(true);
 		}
@@ -17,5 +15,7 @@ namespace DracoProtos.Core.Base
 		{
 			stream.WriteStaticCollection(this.entries, true);
 		}
+
+		public List<FCreadexEntry> entries;
 	}
 }

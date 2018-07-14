@@ -1,13 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FStartEncounterRequestBase : IFObject
 	{
-        public string attackerId;
-        public string defenderId;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.attackerId = stream.ReadUtfString();
 			this.defenderId = stream.ReadUtfString();
@@ -18,5 +15,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.attackerId);
 			stream.WriteUtfString(this.defenderId);
 		}
+
+		public string defenderId;
+
+		public string attackerId;
 	}
 }

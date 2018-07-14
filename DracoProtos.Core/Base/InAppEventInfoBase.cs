@@ -1,16 +1,11 @@
-using System.Collections.Generic;
-using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class InAppEventInfoBase : IFObject
 	{
-        public Dictionary<string, string> eventItems;
-        public InAppEventType eventType;
-        public string userId;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.eventItems = stream.ReadStaticMap<string, string>(true, true);
 			this.eventType = (InAppEventType)stream.ReadEnum(typeof(InAppEventType));
@@ -23,5 +18,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.eventType);
 			stream.WriteUtfString(this.userId);
 		}
+
+		public InAppEventType eventType;
+
+		public string userId;
+
+		public Dictionary<string, string> eventItems;
 	}
 }

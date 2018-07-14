@@ -1,14 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class IdAndCoordsBase : IFObject
 	{
-        public GeoCoords coords;
-        public string id;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.coords = (GeoCoords)stream.ReadStaticObject(typeof(GeoCoords));
 			this.id = stream.ReadUtfString();
@@ -19,5 +16,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteStaticObject(this.coords);
 			stream.WriteUtfString(this.id);
 		}
+
+		public string id;
+
+		public GeoCoords coords;
 	}
 }

@@ -1,12 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FBaseLootItemBase : IFObject
 	{
-        public int qty;
-
-        public virtual void ReadExternal(FInputStream stream)
+		public virtual void ReadExternal(FInputStream stream)
 		{
 			this.qty = stream.ReadInt32();
 		}
@@ -15,5 +13,7 @@ namespace DracoProtos.Core.Base
 		{
 			stream.WriteInt32(this.qty);
 		}
+
+		public int qty;
 	}
 }

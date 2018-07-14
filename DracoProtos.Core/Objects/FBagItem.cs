@@ -1,5 +1,4 @@
-using DracoProtos.Core.Base;
-using DracoProtos.Core.Enums;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
@@ -43,6 +42,22 @@ namespace DracoProtos.Core.Objects
 		public static bool operator !=(FBagItem left, FBagItem right)
 		{
 			return !object.Equals(left, right);
+		}
+
+		public override string ToString()
+		{
+			return string.Concat(new object[]
+			{
+				"FBagItem{type=",
+				this.type,
+				", count=",
+				this.count,
+				", removable=",
+				this.removable,
+				", stack=",
+				this.stack,
+				'}'
+			});
 		}
 	}
 }

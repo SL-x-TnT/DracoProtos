@@ -1,14 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FTileBase : IFObject
 	{
-        public string dungeonId;
-        public Tile tile;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.dungeonId = (string)stream.ReadDynamicObject();
 			this.tile = (Tile)stream.ReadStaticObject(typeof(Tile));
@@ -19,5 +16,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.dungeonId);
 			stream.WriteStaticObject(this.tile);
 		}
+
+		public Tile tile;
+
+		public string dungeonId;
 	}
 }

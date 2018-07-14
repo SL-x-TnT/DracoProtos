@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -7,10 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class ProductGroupBase : IFObject
 	{
-        public ItemType itemType;
-        public List<ProductLot> productLots;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.itemType = (ItemType)stream.ReadEnum(typeof(ItemType));
 			this.productLots = stream.ReadStaticList<ProductLot>(true);
@@ -21,5 +17,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.itemType);
 			stream.WriteStaticCollection(this.productLots, true);
 		}
+
+		public ItemType itemType;
+
+		public List<ProductLot> productLots;
 	}
 }

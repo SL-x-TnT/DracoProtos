@@ -2,9 +2,7 @@
 
 namespace DracoProtos.Core.Objects
 {
-
-    public class FCollectorRating :FCollectorRatingBase
-    {
-    }
+    public class FCollectorRating : FCollectorRatingBase
+	{
+	}
 }
-  

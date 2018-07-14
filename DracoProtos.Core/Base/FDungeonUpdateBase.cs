@@ -1,17 +1,11 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FDungeonUpdateBase : FBaseItemUpdate
 	{
-        public GeoCoords coords;
-        public float rotation;
-        public int size;
-        public DungeonShapeType type;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.coords = (GeoCoords)stream.ReadStaticObject(typeof(GeoCoords));
@@ -28,5 +22,13 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.size);
 			stream.WriteEnum(this.type);
 		}
+
+		public GeoCoords coords;
+
+		public DungeonShapeType type;
+
+		public float rotation;
+
+		public int size;
 	}
 }

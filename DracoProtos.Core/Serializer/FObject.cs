@@ -1,4 +1,4 @@
-namespace DracoProtos.Core.Serializer
+﻿namespace DracoProtos.Core.Serializer
 {
     public interface IFObject
 	{

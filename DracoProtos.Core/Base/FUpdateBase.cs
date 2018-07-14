@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -6,10 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FUpdateBase : IFObject
 	{
-        public List<FBaseItemUpdate> items;
-        public long serverTime;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.items = stream.ReadStaticList<FBaseItemUpdate>(false);
 			this.serverTime = stream.ReadInt64();
@@ -20,5 +17,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteStaticCollection(this.items, false);
 			stream.WriteInt64(this.serverTime);
 		}
+
+		public List<FBaseItemUpdate> items;
+
+		public long serverTime;
 	}
 }

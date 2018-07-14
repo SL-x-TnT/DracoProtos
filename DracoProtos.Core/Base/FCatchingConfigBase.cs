@@ -1,34 +1,11 @@
-using System.Collections.Generic;
-using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FCatchingConfigBase : IFObject
 	{
-        public Dictionary<ItemType, float> catchChances;
-        public float chanceToAttack;
-        public float chanceToJump;
-        public float distance;
-        public float endCamPosDistance;
-        public float endCamPosHeight;
-        public float flyTime;
-        public float height;
-        public float lookAtHeight;
-        public float maxDistance;
-        public float maxHeight;
-        public float moveCheckCooldownSeconds;
-        public float offsetDistance;
-        public float offsetHeight;
-        public float scale;
-        public float scaleCollider;
-        public float sightRadiusDecreaseTimeSeconds;
-        public float sightRadiusMax;
-        public float sightRadiusMin;
-        public float startCamPosDistance;
-        public float startCamPosHeight;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.catchChances = stream.ReadStaticMap<ItemType, float>(true, true);
 			this.chanceToAttack = stream.ReadFloat();
@@ -77,5 +54,47 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.startCamPosDistance);
 			stream.WriteFloat(this.startCamPosHeight);
 		}
+
+		public float distance;
+
+		public float height;
+
+		public float lookAtHeight;
+
+		public float scale;
+
+		public float maxDistance;
+
+		public float startCamPosDistance;
+
+		public float startCamPosHeight;
+
+		public float endCamPosDistance;
+
+		public float endCamPosHeight;
+
+		public float moveCheckCooldownSeconds;
+
+		public float chanceToAttack;
+
+		public float chanceToJump;
+
+		public float flyTime;
+
+		public float offsetDistance;
+
+		public float offsetHeight;
+
+		public float sightRadiusMax;
+
+		public float sightRadiusMin;
+
+		public float sightRadiusDecreaseTimeSeconds;
+
+		public float maxHeight;
+
+		public float scaleCollider;
+
+		public Dictionary<ItemType, float> catchChances;
 	}
 }

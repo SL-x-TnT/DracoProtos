@@ -1,14 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FUpdateNicknameResultBase : FBaseItemUpdate
 	{
-        public FUserInfo userInfo;
-        public FNicknameValidationResult validationResult;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.userInfo = (FUserInfo)stream.ReadDynamicObject();
@@ -21,5 +18,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.userInfo);
 			stream.WriteDynamicObject(this.validationResult);
 		}
+
+		public FNicknameValidationResult validationResult;
+
+		public FUserInfo userInfo;
 	}
 }

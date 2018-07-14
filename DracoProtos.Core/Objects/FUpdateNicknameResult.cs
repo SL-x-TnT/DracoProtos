@@ -1,4 +1,4 @@
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
@@ -13,12 +13,9 @@ namespace DracoProtos.Core.Objects
 			this.userInfo = userInfo;
 		}
 
-		public override void Handle()
-		{
-			if (this.userInfo != null)
-			{
-				this.userInfo.Handle();
-			}
-		}
-	}
+        public override void Handle()
+        {
+           
+        }
+    }
 }

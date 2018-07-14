@@ -1,17 +1,12 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class AuthDataBase : IFObject
 	{
-        public AuthType authType;
-        public string profileId;
-        public string tokenId;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
-            this.authType = (AuthType)stream.ReadEnum(typeof(AuthType));
+			this.authType = (AuthType)stream.ReadEnum(typeof(AuthType));
 			this.profileId = stream.ReadUtfString();
 			this.tokenId = (string)stream.ReadDynamicObject();
 		}
@@ -22,5 +17,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.profileId);
 			stream.WriteDynamicObject(this.tokenId);
 		}
+
+		public AuthType authType;
+
+		public string profileId;
+
+		public string tokenId;
 	}
 }

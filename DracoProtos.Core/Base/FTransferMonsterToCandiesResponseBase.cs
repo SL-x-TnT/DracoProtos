@@ -1,13 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FTransferMonsterToCandiesResponseBase : FBaseItemUpdate
 	{
-        public FLoot loot;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.loot = (FLoot)stream.ReadStaticObject(typeof(FLoot));
@@ -18,5 +16,7 @@ namespace DracoProtos.Core.Base
 			base.WriteExternal(stream);
 			stream.WriteStaticObject(this.loot);
 		}
+
+		public FLoot loot;
 	}
 }

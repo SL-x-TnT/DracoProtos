@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -6,9 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FUserCreaturesListBase : FBaseItemUpdate
 	{
-        public List<FUserCreature> userCreatures;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.userCreatures = stream.ReadStaticList<FUserCreature>(true);
@@ -19,5 +17,7 @@ namespace DracoProtos.Core.Base
 			base.WriteExternal(stream);
 			stream.WriteStaticCollection(this.userCreatures, true);
 		}
+
+		public List<FUserCreature> userCreatures;
 	}
 }

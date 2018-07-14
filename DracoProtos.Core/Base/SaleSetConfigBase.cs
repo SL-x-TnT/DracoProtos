@@ -1,27 +1,28 @@
-﻿using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
-using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class SaleSetConfigBase : IFObject
-    {
-        public Dictionary<ItemType, int> items;
-        public int price;
-        public SaleSetType type;
+	{
+		public void ReadExternal(FInputStream stream)
+		{
+			this.items = stream.ReadStaticMap<ItemType, int>(true, true);
+			this.price = stream.ReadInt32();
+			this.type = (SaleSetType)stream.ReadEnum(typeof(SaleSetType));
+		}
 
-        public void ReadExternal(FInputStream stream)
-        {
-            this.items = stream.ReadStaticMap<ItemType, int>(true, true);
-            this.price = stream.ReadInt32();
-            this.type = (SaleSetType)stream.ReadDynamicObject();
-        }
+		public void WriteExternal(FOutputStream stream)
+		{
+			stream.WriteStaticMap(this.items, true, true);
+			stream.WriteInt32(this.price);
+			stream.WriteEnum(this.type);
+		}
 
-        public void WriteExternal(FOutputStream stream)
-        {
-            stream.WriteStaticMap(this.items, true, true);
-            stream.WriteInt32(this.price);
-            stream.WriteDynamicObject(this.type);
-        }
-    }
+		public SaleSetType type;
+
+		public int price;
+
+		public Dictionary<ItemType, int> items;
+	}
 }

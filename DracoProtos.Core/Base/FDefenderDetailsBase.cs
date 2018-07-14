@@ -1,20 +1,10 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FDefenderDetailsBase : IFObject
 	{
-        public AllianceType allianceType;
-        public string creatureAlias;
-        public int creatureCp;
-        public CreatureType creatureName;
-        public ElementType elementType;
-        public int ownerLevel;
-        public string ownerName;
-        public int userAppearance;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.allianceType = (AllianceType)stream.ReadEnum(typeof(AllianceType));
 			this.creatureAlias = (string)stream.ReadDynamicObject();
@@ -37,5 +27,21 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.ownerName);
 			stream.WriteInt32(this.userAppearance);
 		}
+
+		public CreatureType creatureName;
+
+		public string creatureAlias;
+
+		public int creatureCp;
+
+		public string ownerName;
+
+		public int ownerLevel;
+
+		public ElementType elementType;
+
+		public int userAppearance;
+
+		public AllianceType allianceType;
 	}
 }

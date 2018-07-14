@@ -1,14 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FEncounterUpdateBase : FBaseItemUpdate
-    {
-        public FFightCreature attacker;
-        public FFightCreature defender;
-
-        public override void ReadExternal(FInputStream stream)
+	{
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.attacker = (FFightCreature)stream.ReadStaticObject(typeof(FFightCreature));
@@ -21,5 +18,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteStaticObject(this.attacker);
 			stream.WriteStaticObject(this.defender);
 		}
+
+		public FFightCreature attacker;
+
+		public FFightCreature defender;
 	}
 }

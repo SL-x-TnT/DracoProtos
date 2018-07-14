@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -7,31 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FArenaDetailsBase : FBaseItemUpdate
 	{
-        public FAllianceChooseRequest allianceChooseRequest;
-        public BuildingType buildingType;
-        public bool canAddDefender;
-        public bool canAttack;
-        public bool capturableGeoPointsLimitReached;
-        public int combinedName;
-        public GeoCoords coords;
-        public int currentExp;
-        public List<FDefenderDetails> defenders;
-        public string id;
-        public long lastUpdateTime;
-        public int level;
-        public int libraryBlockedCooldown;
-        public int minUseLevel;
-        public int nextLevelExp;
-        public AllianceType? ownerAlliance;
-        public int possibleDefendersCount;
-        public float protectionRemainingTime;
-        public int remoteBuildingControlChargesMaxCount;
-        public int remoteBuildingControlChargesUsed;
-        public int remoteBuildingControlCooldown;
-        public AllianceType? restrictedForAllianceToCapture;
-        public float restrictedForAllianceToCaptureRemainingTime;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.allianceChooseRequest = (FAllianceChooseRequest)stream.ReadDynamicObject();
@@ -44,18 +19,18 @@ namespace DracoProtos.Core.Base
 			this.currentExp = stream.ReadInt32();
 			this.defenders = stream.ReadStaticList<FDefenderDetails>(true);
 			this.id = stream.ReadUtfString();
-            this.lastUpdateTime = stream.ReadInt64();
+			this.lastUpdateTime = stream.ReadInt64();
 			this.level = stream.ReadInt32();
-            this.libraryBlockedCooldown = stream.ReadInt32();
+			this.libraryBlockedCooldown = stream.ReadInt32();
 			this.minUseLevel = stream.ReadInt32();
 			this.nextLevelExp = stream.ReadInt32();
 			this.ownerAlliance = (AllianceType?)stream.ReadDynamicObject();
-            this.possibleDefendersCount = stream.ReadInt32();
-            this.protectionRemainingTime = stream.ReadFloat();
-            this.remoteBuildingControlChargesMaxCount = stream.ReadInt32();
-            this.remoteBuildingControlChargesUsed = stream.ReadInt32();
-            this.remoteBuildingControlCooldown = stream.ReadInt32();
-            this.restrictedForAllianceToCapture = (AllianceType?)stream.ReadDynamicObject();
+			this.possibleDefendersCount = stream.ReadInt32();
+			this.protectionRemainingTime = stream.ReadFloat();
+			this.remoteBuildingControlChargesMaxCount = stream.ReadInt32();
+			this.remoteBuildingControlChargesUsed = stream.ReadInt32();
+			this.remoteBuildingControlCooldown = stream.ReadInt32();
+			this.restrictedForAllianceToCapture = (AllianceType?)stream.ReadDynamicObject();
 			this.restrictedForAllianceToCaptureRemainingTime = stream.ReadFloat();
 		}
 
@@ -72,19 +47,65 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.currentExp);
 			stream.WriteStaticCollection(this.defenders, true);
 			stream.WriteUtfString(this.id);
-            stream.WriteInt64(this.lastUpdateTime);
+			stream.WriteInt64(this.lastUpdateTime);
 			stream.WriteInt32(this.level);
-            stream.WriteInt32(this.libraryBlockedCooldown);
+			stream.WriteInt32(this.libraryBlockedCooldown);
 			stream.WriteInt32(this.minUseLevel);
 			stream.WriteInt32(this.nextLevelExp);
 			stream.WriteDynamicObject(this.ownerAlliance);
-            stream.WriteInt32(this.possibleDefendersCount);
+			stream.WriteInt32(this.possibleDefendersCount);
 			stream.WriteFloat(this.protectionRemainingTime);
-            stream.WriteInt32(this.remoteBuildingControlChargesMaxCount);
-            stream.WriteInt32(this.remoteBuildingControlChargesUsed);
-            stream.WriteInt32(this.remoteBuildingControlCooldown);
-            stream.WriteDynamicObject(this.restrictedForAllianceToCapture);
+			stream.WriteInt32(this.remoteBuildingControlChargesMaxCount);
+			stream.WriteInt32(this.remoteBuildingControlChargesUsed);
+			stream.WriteInt32(this.remoteBuildingControlCooldown);
+			stream.WriteDynamicObject(this.restrictedForAllianceToCapture);
 			stream.WriteFloat(this.restrictedForAllianceToCaptureRemainingTime);
 		}
+
+		public string id;
+
+		public GeoCoords coords;
+
+		public int remoteBuildingControlChargesMaxCount;
+
+		public int remoteBuildingControlChargesUsed;
+
+		public int remoteBuildingControlCooldown;
+
+		public int minUseLevel;
+
+		public bool canAttack;
+
+		public float protectionRemainingTime;
+
+		public AllianceType? ownerAlliance;
+
+		public int level;
+
+		public int currentExp;
+
+		public int nextLevelExp;
+
+		public List<FDefenderDetails> defenders;
+
+		public bool canAddDefender;
+
+		public int possibleDefendersCount;
+
+		public bool capturableGeoPointsLimitReached;
+
+		public int combinedName;
+
+		public int libraryBlockedCooldown;
+
+		public AllianceType? restrictedForAllianceToCapture;
+
+		public float restrictedForAllianceToCaptureRemainingTime;
+
+		public FAllianceChooseRequest allianceChooseRequest;
+
+		public BuildingType buildingType;
+
+		public long lastUpdateTime;
 	}
 }

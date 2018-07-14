@@ -3,6 +3,6 @@
 namespace DracoProtos.Core.Objects
 {
     public class ExtraPack : ExtraPackBase
-    {
-    }
+	{
+	}
 }

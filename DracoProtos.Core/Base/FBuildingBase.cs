@@ -1,29 +1,18 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FBuildingBase : FBaseItemUpdate
 	{
-        public FAltar altar;
-        public FArena arena;
-        public bool available;
-        public bool casted;
-        public GeoCoords coords;
-        public string dungeonId;
-        public long expirationTime;
-        public string id;
-        public FPitstop pitstop;
-        public BuildingType type;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.altar = (FAltar)stream.ReadDynamicObject();
 			this.arena = (FArena)stream.ReadDynamicObject();
 			this.available = stream.ReadBoolean();
 			this.casted = stream.ReadBoolean();
+			this.contest = (FContest)stream.ReadDynamicObject();
 			this.coords = (GeoCoords)stream.ReadStaticObject(typeof(GeoCoords));
 			this.dungeonId = (string)stream.ReadDynamicObject();
 			this.expirationTime = stream.ReadInt64();
@@ -39,6 +28,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.arena);
 			stream.WriteBoolean(this.available);
 			stream.WriteBoolean(this.casted);
+			stream.WriteDynamicObject(this.contest);
 			stream.WriteStaticObject(this.coords);
 			stream.WriteDynamicObject(this.dungeonId);
 			stream.WriteInt64(this.expirationTime);
@@ -46,5 +36,27 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.pitstop);
 			stream.WriteEnum(this.type);
 		}
+
+		public string id;
+
+		public GeoCoords coords;
+
+		public BuildingType type;
+
+		public bool available;
+
+		public bool casted;
+
+		public long expirationTime;
+
+		public string dungeonId;
+
+		public FPitstop pitstop;
+
+		public FArena arena;
+
+		public FAltar altar;
+
+		public FContest contest;
 	}
 }

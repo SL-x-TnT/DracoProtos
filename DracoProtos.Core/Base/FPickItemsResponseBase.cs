@@ -1,14 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FPickItemsResponseBase : FBaseItemUpdate
 	{
-        public FLoot levelUpLoot;
-        public FLoot loot;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.levelUpLoot = (FLoot)stream.ReadDynamicObject();
@@ -21,5 +18,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.levelUpLoot);
 			stream.WriteStaticObject(this.loot);
 		}
+
+		public FLoot loot;
+
+		public FLoot levelUpLoot;
 	}
 }

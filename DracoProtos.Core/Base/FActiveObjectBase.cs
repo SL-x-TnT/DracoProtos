@@ -1,24 +1,11 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FActiveObjectBase : IFObject
 	{
-        public AllianceType? allianceType;
-        public string arenaId;
-        public int combinedName;
-        public GeoCoords coords;
-        public string creatureAlias;
-        public int creatureCp;
-        public CreatureType creatureName;
-        public int level;
-        public bool lost;
-        public float timeLeft;
-        public int weaklyBonus;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.allianceType = (AllianceType?)stream.ReadDynamicObject();
 			this.arenaId = stream.ReadUtfString();
@@ -47,5 +34,27 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.timeLeft);
 			stream.WriteInt32(this.weaklyBonus);
 		}
+
+		public int combinedName;
+
+		public string arenaId;
+
+		public CreatureType creatureName;
+
+		public string creatureAlias;
+
+		public int creatureCp;
+
+		public int level;
+
+		public AllianceType? allianceType;
+
+		public float timeLeft;
+
+		public bool lost;
+
+		public GeoCoords coords;
+
+		public int weaklyBonus;
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace DracoProtos.Core.Objects
 {
-    public abstract class FBaseRatingRecord : FBaseRatingRecordBase
-    {
-    }
+    public class FBaseRatingRecord : FBaseRatingRecordBase
+	{
+	}
 }

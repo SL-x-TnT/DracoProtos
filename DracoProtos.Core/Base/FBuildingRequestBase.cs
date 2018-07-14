@@ -1,15 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FBuildingRequestBase : IFObject
 	{
-        public GeoCoords coords;
-        public string dungeonId;
-        public string id;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.coords = (GeoCoords)stream.ReadStaticObject(typeof(GeoCoords));
 			this.dungeonId = (string)stream.ReadDynamicObject();
@@ -22,5 +18,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.dungeonId);
 			stream.WriteUtfString(this.id);
 		}
+
+		public string id;
+
+		public GeoCoords coords;
+
+		public string dungeonId;
 	}
 }

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -6,11 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FQuestUpdateBase : FBaseItemUpdate
 	{
-        public FQuestCompleted completed;
-        public IdAndCoords highlightBuilding;
-        public List<IdAndCoords> path;
-
-        public override void ReadExternal(FInputStream stream)
+		public override void ReadExternal(FInputStream stream)
 		{
 			base.ReadExternal(stream);
 			this.completed = (FQuestCompleted)stream.ReadDynamicObject();
@@ -25,5 +21,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.highlightBuilding);
 			stream.WriteDynamicCollection(this.path, true);
 		}
+
+		public FQuestCompleted completed;
+
+		public List<IdAndCoords> path;
+
+		public IdAndCoords highlightBuilding;
 	}
 }

@@ -1,16 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FRegistrationInfoBase : IFObject
 	{
-        public string age;
-        public string gender;
-        public string regType;
-        public string email;
-        public string socialId;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.age = stream.ReadUtfString();
 			this.email = stream.ReadUtfString();
@@ -27,5 +21,15 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.regType);
 			stream.WriteUtfString(this.socialId);
 		}
+
+		public string email;
+
+		public string regType;
+
+		public string socialId;
+
+		public string gender;
+
+		public string age;
 	}
 }

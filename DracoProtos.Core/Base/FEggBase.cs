@@ -1,20 +1,9 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FEggBase : IFObject
 	{
-		public string id;
-		public float totalDistance;
-		public float passedDistance;
-		public bool isHatching;
-		public string incubatorId;
-		public bool isEggForRoost;
-		public long totalIncubationTime;
-		public ItemType eggType;
-		public ItemType? incubatorType;
-
 		public void ReadExternal(FInputStream stream)
 		{
 			this.eggType = (ItemType)stream.ReadEnum(typeof(ItemType));
@@ -40,5 +29,23 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.totalDistance);
 			stream.WriteInt64(this.totalIncubationTime);
 		}
+
+		public string id;
+
+		public float totalDistance;
+
+		public float passedDistance;
+
+		public bool isHatching;
+
+		public string incubatorId;
+
+		public bool isEggForRoost;
+
+		public long totalIncubationTime;
+
+		public ItemType eggType;
+
+		public ItemType? incubatorType;
 	}
 }

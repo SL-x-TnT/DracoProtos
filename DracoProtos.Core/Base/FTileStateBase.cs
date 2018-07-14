@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -6,10 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FTileStateBase : IFObject
 	{
-        public List<FBuilding> buildings;
-        public long time;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.buildings = stream.ReadStaticList<FBuilding>(true);
 			this.time = stream.ReadInt64();
@@ -20,5 +17,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteStaticCollection(this.buildings, true);
 			stream.WriteInt64(this.time);
 		}
+
+		public long time;
+
+		public List<FBuilding> buildings;
 	}
 }

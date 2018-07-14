@@ -1,7 +1,7 @@
-using DracoProtos.Core.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Serializer
 {
@@ -38,17 +38,10 @@ namespace DracoProtos.Core.Serializer
 			throw new ArgumentException("unknown class: " + clazz);
 		}
 
-        public T Deserialize<T>(byte[] data)
-        {
-            FInputStream finputStream = new FInputStream(this, new BigEndianBinaryReader(new MemoryStream(data)));
-            object obj = finputStream.ReadDynamicObject();
-
-            return (T)obj;
-        }
-
 		public object Deserialize(byte[] data)
 		{
-            return Deserialize<object>(data);
+			FInputStream finputStream = new FInputStream(this, new BigEndianBinaryReader(new MemoryStream(data)));
+			return finputStream.ReadDynamicObject();
 		}
 
 		public byte[] Serialize(object data)
@@ -69,25 +62,25 @@ namespace DracoProtos.Core.Serializer
 
 		public static Type GetArrayPrimitiveType(sbyte id)
 		{
-            switch (id)
-            {
-                case 1:
-                    return typeof(byte);
-                case 2:
-                    return typeof(short);
-                case 3:
-                    return typeof(int);
-                case 4:
-                    return typeof(long);
-                case 5:
-                    return typeof(float);
-                case 6:
-                    return typeof(double);
-                case 7:
-                    return typeof(bool);
-                default:
-                    throw new Exception("Wrong id: " + id);
-            }
+			switch (id)
+			{
+			case 1:
+				return typeof(byte);
+			case 2:
+				return typeof(short);
+			case 3:
+				return typeof(int);
+			case 4:
+				return typeof(long);
+			case 5:
+				return typeof(float);
+			case 6:
+				return typeof(double);
+			case 7:
+				return typeof(bool);
+			default:
+				throw new Exception("Wrong id: " + id);
+			}
 		}
 
 		public static sbyte GetArrayPrimitiveTypeId(object array)
@@ -127,7 +120,7 @@ namespace DracoProtos.Core.Serializer
 			throw new Exception("Wrong type: " + array.GetType());
 		}
 
-		public static readonly SerializerContext Context = new SerializerContext("portal", FGameObjects.CLASSES, FGameObjects.ProtocolVersion);
+		public static readonly SerializerContext PORTAL = new SerializerContext("portal", FGameObjects.CLASSES, 1440475418u);
 
 		public const sbyte NULL = 0;
 

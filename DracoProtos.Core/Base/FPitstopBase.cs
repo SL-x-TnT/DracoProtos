@@ -1,16 +1,10 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FPitstopBase : IFObject
 	{
-        public bool cooldown;
-        public string lureBy;
-        public long lureTimeLeft;
-        public PersonalizedStop? personalized;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.cooldown = stream.ReadBoolean();
 			this.lureBy = (string)stream.ReadDynamicObject();
@@ -25,5 +19,13 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt64(this.lureTimeLeft);
 			stream.WriteDynamicObject(this.personalized);
 		}
+
+		public PersonalizedStop? personalized;
+
+		public long lureTimeLeft;
+
+		public string lureBy;
+
+		public bool cooldown;
 	}
 }

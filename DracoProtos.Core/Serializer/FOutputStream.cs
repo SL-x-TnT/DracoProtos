@@ -1,4 +1,4 @@
-using DracoProtos.Core.Extensions;
+﻿using DracoProtos.Core.Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DracoProtos.Core.Serializer
 {
-	public class FOutputStream : IDisposable
+    public class FOutputStream : IDisposable
 	{
 		public FOutputStream(SerializerContext context, BinaryWriter dataStream)
 		{
@@ -117,8 +117,8 @@ namespace DracoProtos.Core.Serializer
 
 		public void WriteVector2(Vector2 v)
 		{
-			this.dataStream.Write(v.X);
-			this.dataStream.Write(v.Y);
+			this.dataStream.Write(v.x);
+			this.dataStream.Write(v.y);
 		}
 
 		public void WriteEnum(object value)
@@ -246,7 +246,7 @@ namespace DracoProtos.Core.Serializer
 			}
 			else
 			{
-				this.WriteShort((short)(((long)length & -65536) >> 16 | 32768L));
+				this.WriteShort((short)(((long)length & (long)(-65536)) >> 16 | 32768L));
 				this.WriteShort((short)(length & 65535));
 			}
 		}

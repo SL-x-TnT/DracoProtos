@@ -1,15 +1,10 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FCreadexChainBase : IFObject
 	{
-        public bool caught;
-        public CreatureType creature;
-        public bool seen;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.caught = stream.ReadBoolean();
 			this.creature = (CreatureType)stream.ReadEnum(typeof(CreatureType));
@@ -22,5 +17,11 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.creature);
 			stream.WriteBoolean(this.seen);
 		}
+
+		public CreatureType creature;
+
+		public bool seen;
+
+		public bool caught;
 	}
 }

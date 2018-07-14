@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -7,20 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FCatchingCreatureBase : IFObject
 	{
-        public bool aggressive;
-        public CreatureType candyType;
-        public FCatchingConfig catching;
-        public int cp;
-        public ElementType element;
-        public ItemType? feedFoodType;
-        public int feedLeftTime;
-        public string id;
-        public bool isCreatureStorageFull;
-        public Dictionary<ItemType, int> items;
-        public CreatureType name;
-        public float quality;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.aggressive = stream.ReadBoolean();
 			this.candyType = (CreatureType)stream.ReadEnum(typeof(CreatureType));
@@ -51,5 +37,29 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.name);
 			stream.WriteFloat(this.quality);
 		}
+
+		public string id;
+
+		public int cp;
+
+		public CreatureType name;
+
+		public float quality;
+
+		public CreatureType candyType;
+
+		public ElementType element;
+
+		public bool isCreatureStorageFull;
+
+		public FCatchingConfig catching;
+
+		public Dictionary<ItemType, int> items;
+
+		public int feedLeftTime;
+
+		public ItemType? feedFoodType;
+
+		public bool aggressive;
 	}
 }

@@ -1,23 +1,10 @@
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FClientInfoBase : IFObject
 	{
-        public string deviceModel;
-        public string googleAdvertisingId;
-        public bool googleTrackingEnabled;
-        public string iOsAdvertisingIdentifier;
-        public bool iOsAdvertisingTrackingEnabled;
-        public string iOsVendorIdentifier;
-        public string language;
-        public string platform;
-        public string platformVersion;
-        public string revision;
-        public int screenHeight;
-        public int screenWidth;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.deviceModel = stream.ReadUtfString();
 			this.googleAdvertisingId = (string)stream.ReadDynamicObject();
@@ -46,8 +33,31 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.platformVersion);
 			stream.WriteUtfString(this.revision);
 			stream.WriteInt32(this.screenHeight);
-
 			stream.WriteInt32(this.screenWidth);
 		}
+
+		public string platform;
+
+		public string platformVersion;
+
+		public string revision;
+
+		public string deviceModel;
+
+		public int screenWidth;
+
+		public int screenHeight;
+
+		public string language;
+
+		public string iOsAdvertisingIdentifier;
+
+		public bool iOsAdvertisingTrackingEnabled;
+
+		public string iOsVendorIdentifier;
+
+		public string googleAdvertisingId;
+
+		public bool googleTrackingEnabled;
 	}
 }

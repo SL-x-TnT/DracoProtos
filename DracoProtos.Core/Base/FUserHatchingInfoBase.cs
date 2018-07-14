@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
@@ -6,12 +6,7 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FUserHatchingInfoBase : IFObject
 	{
-        public List<FEgg> eggs;
-        public List<FIncubator> incubators;
-        public int max;
-        public int maxRoost;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.eggs = stream.ReadStaticList<FEgg>(true);
 			this.incubators = stream.ReadStaticList<FIncubator>(true);
@@ -26,5 +21,13 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.max);
 			stream.WriteInt32(this.maxRoost);
 		}
+
+		public List<FEgg> eggs;
+
+		public List<FIncubator> incubators;
+
+		public int maxRoost;
+
+		public int max;
 	}
 }

@@ -1,54 +1,10 @@
-using DracoProtos.Core.Enums;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FFightCreatureBase : IFObject
 	{
-        public string alias;
-        public bool attacker;
-        public int baseCp;
-        public string chargedSkill;
-        public bool chargedSkillAim;
-        public int chargedSkillAngle;
-        public float chargedSkillDps;
-        public SkillQuality chargedSkillQuality;
-        public float chargedSkillSpeed;
-        public float chargedSkillTtl;
-        public int cp;
-        public ElementType decreasedDmgTo;
-        public float distance;
-        public float dodgeAngle;
-        public float dodgeDamageRatio;
-        public float dodgeMoveTime;
-        public int energySegments;
-        public float height;
-        public float holdTimeForChargedSkill;
-        public float hp;
-        public string id;
-        public float incomingEnergyOnAttack;
-        public ElementType increasedDmgTo;
-        public string mainSkill;
-        public bool mainSkillAim;
-        public int mainSkillAngle;
-        public float mainSkillDps;
-        public SkillQuality mainSkillQuality;
-        public float mainSkillSpeed;
-        public float mainSkillTtl;
-        public float maxEnergy;
-        public CreatureType name;
-        public float resistCoef;
-        public ElementType resistFor;
-        public float rightElementAttackCoef;
-        public float scale;
-        public float specAttackCoef;
-        public float startCamPosDistance;
-        public float startCamPosHeight;
-        public float totalHp;
-        public ElementType type;
-        public float wrongElementAttackCoef;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.alias = (string)stream.ReadDynamicObject();
 			this.attacker = stream.ReadBoolean();
@@ -82,9 +38,9 @@ namespace DracoProtos.Core.Base
 			this.mainSkillTtl = stream.ReadFloat();
 			this.maxEnergy = stream.ReadFloat();
 			this.name = (CreatureType)stream.ReadEnum(typeof(CreatureType));
-            this.resistCoef = stream.ReadFloat();
-            this.resistFor = (ElementType)stream.ReadEnum(typeof(ElementType));
-            this.rightElementAttackCoef = stream.ReadFloat();
+			this.resistCoef = stream.ReadFloat();
+			this.resistFor = (ElementType)stream.ReadEnum(typeof(ElementType));
+			this.rightElementAttackCoef = stream.ReadFloat();
 			this.scale = stream.ReadFloat();
 			this.specAttackCoef = stream.ReadFloat();
 			this.startCamPosDistance = stream.ReadFloat();
@@ -128,8 +84,8 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.mainSkillTtl);
 			stream.WriteFloat(this.maxEnergy);
 			stream.WriteEnum(this.name);
-            stream.WriteFloat(this.resistCoef);
-            stream.WriteEnum(this.resistFor);
+			stream.WriteFloat(this.resistCoef);
+			stream.WriteEnum(this.resistFor);
 			stream.WriteFloat(this.rightElementAttackCoef);
 			stream.WriteFloat(this.scale);
 			stream.WriteFloat(this.specAttackCoef);
@@ -139,5 +95,89 @@ namespace DracoProtos.Core.Base
 			stream.WriteEnum(this.type);
 			stream.WriteFloat(this.wrongElementAttackCoef);
 		}
+
+		public string id;
+
+		public CreatureType name;
+
+		public string alias;
+
+		public int baseCp;
+
+		public int cp;
+
+		public float hp;
+
+		public float totalHp;
+
+		public ElementType type;
+
+		public ElementType increasedDmgTo;
+
+		public ElementType decreasedDmgTo;
+
+		public ElementType resistFor;
+
+		public float resistCoef;
+
+		public string mainSkill;
+
+		public SkillQuality mainSkillQuality;
+
+		public float mainSkillDps;
+
+		public float mainSkillSpeed;
+
+		public int mainSkillAngle;
+
+		public float mainSkillTtl;
+
+		public bool mainSkillAim;
+
+		public float incomingEnergyOnAttack;
+
+		public string chargedSkill;
+
+		public float chargedSkillDps;
+
+		public float chargedSkillSpeed;
+
+		public SkillQuality chargedSkillQuality;
+
+		public int chargedSkillAngle;
+
+		public float chargedSkillTtl;
+
+		public bool chargedSkillAim;
+
+		public float maxEnergy;
+
+		public int energySegments;
+
+		public float holdTimeForChargedSkill;
+
+		public float dodgeDamageRatio;
+
+		public float dodgeMoveTime;
+
+		public float dodgeAngle;
+
+		public float specAttackCoef;
+
+		public float rightElementAttackCoef;
+
+		public float wrongElementAttackCoef;
+
+		public float distance;
+
+		public float height;
+
+		public float scale;
+
+		public float startCamPosDistance;
+
+		public float startCamPosHeight;
+
+		public bool attacker;
 	}
 }

@@ -1,47 +1,11 @@
-using System.Collections.Generic;
-using DracoProtos.Core.Enums;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FUserCreatureBase : IFObject
 	{
-        public string alias;
-        public int attackValue;
-        public int baseCp;
-        public CreatureType candyType;
-        public int chargedSegments;
-        public string chargedSkill;
-        public float chargedSkillDps;
-        public int cp;
-        public int cReadexIndex;
-        public float dps;
-        public ElementType elementType;
-        public long gotchaTime;
-        public int group;
-        public bool hasMaxResist;
-        public float hp;
-        public string id;
-        public bool improvable;
-        public int improveCandiesCost;
-        public int improveDustCost;
-        public bool isArenaDefender;
-        public bool isAttacker;
-        public bool isLibraryDefender;
-        public int level;
-        public string mainSkill;
-        public float mainSkillDps;
-        public float mainSkillEps;
-        public CreatureType name;
-        public bool permanent;
-        public Dictionary<CreatureType, int> possibleEvolutions;
-        public float resist;
-        public ElementType resistFor;
-        public int staminaValue;
-        public int tier;
-        public float totalHp;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.alias = (string)stream.ReadDynamicObject();
 			this.attackValue = stream.ReadInt32();
@@ -51,13 +15,13 @@ namespace DracoProtos.Core.Base
 			this.chargedSkill = stream.ReadUtfString();
 			this.chargedSkillDps = stream.ReadFloat();
 			this.cp = stream.ReadInt32();
-            this.cReadexIndex = stream.ReadInt32();
+			this.creadexIndex = stream.ReadInt32();
 			this.dps = stream.ReadFloat();
 			this.elementType = (ElementType)stream.ReadEnum(typeof(ElementType));
 			this.gotchaTime = stream.ReadInt64();
 			this.group = stream.ReadInt32();
-            this.hasMaxResist = stream.ReadBoolean();
-            this.hp = stream.ReadFloat();
+			this.hasMaxResist = stream.ReadBoolean();
+			this.hp = stream.ReadFloat();
 			this.id = stream.ReadUtfString();
 			this.improvable = stream.ReadBoolean();
 			this.improveCandiesCost = stream.ReadInt32();
@@ -70,12 +34,12 @@ namespace DracoProtos.Core.Base
 			this.mainSkillDps = stream.ReadFloat();
 			this.mainSkillEps = stream.ReadFloat();
 			this.name = (CreatureType)stream.ReadEnum(typeof(CreatureType));
-            this.permanent = stream.ReadBoolean();
-            this.possibleEvolutions = stream.ReadStaticMap<CreatureType, int>(true, true);
-            this.resist = stream.ReadFloat();
-            this.resistFor = (ElementType)stream.ReadEnum(typeof(ElementType));
-            this.tier = stream.ReadInt32();
+			this.permanent = stream.ReadBoolean();
+			this.possibleEvolutions = stream.ReadStaticMap<CreatureType, int>(true, true);
+			this.resist = stream.ReadFloat();
+			this.resistFor = (ElementType)stream.ReadEnum(typeof(ElementType));
 			this.staminaValue = stream.ReadInt32();
+			this.tier = stream.ReadInt32();
 			this.totalHp = stream.ReadFloat();
 		}
 
@@ -89,12 +53,12 @@ namespace DracoProtos.Core.Base
 			stream.WriteUtfString(this.chargedSkill);
 			stream.WriteFloat(this.chargedSkillDps);
 			stream.WriteInt32(this.cp);
-            stream.WriteInt32(this.cReadexIndex);
+			stream.WriteInt32(this.creadexIndex);
 			stream.WriteFloat(this.dps);
 			stream.WriteEnum(this.elementType);
 			stream.WriteInt64(this.gotchaTime);
 			stream.WriteInt32(this.group);
-            stream.WriteBoolean(this.hasMaxResist);
+			stream.WriteBoolean(this.hasMaxResist);
 			stream.WriteFloat(this.hp);
 			stream.WriteUtfString(this.id);
 			stream.WriteBoolean(this.improvable);
@@ -108,13 +72,81 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.mainSkillDps);
 			stream.WriteFloat(this.mainSkillEps);
 			stream.WriteEnum(this.name);
-            stream.WriteBoolean(this.permanent);
-            stream.WriteStaticMap(this.possibleEvolutions, true, true);
-            stream.WriteFloat(this.resist);
-            stream.WriteEnum(this.resistFor);
-			stream.WriteInt32(this.tier);
+			stream.WriteBoolean(this.permanent);
+			stream.WriteStaticMap(this.possibleEvolutions, true, true);
+			stream.WriteFloat(this.resist);
+			stream.WriteEnum(this.resistFor);
 			stream.WriteInt32(this.staminaValue);
+			stream.WriteInt32(this.tier);
 			stream.WriteFloat(this.totalHp);
 		}
+
+		public string id;
+
+		public CreatureType name;
+
+		public string alias;
+
+		public int baseCp;
+
+		public int cp;
+
+		public int level;
+
+		public float dps;
+
+		public float hp;
+
+		public float totalHp;
+
+		public bool isArenaDefender;
+
+		public bool isLibraryDefender;
+
+		public ElementType elementType;
+
+		public int tier;
+
+		public string mainSkill;
+
+		public float mainSkillDps;
+
+		public float mainSkillEps;
+
+		public string chargedSkill;
+
+		public float chargedSkillDps;
+
+		public int chargedSegments;
+
+		public ElementType resistFor;
+
+		public float resist;
+
+		public bool hasMaxResist;
+
+		public int attackValue;
+
+		public int staminaValue;
+
+		public bool isAttacker;
+
+		public bool improvable;
+
+		public int improveDustCost;
+
+		public int improveCandiesCost;
+
+		public Dictionary<CreatureType, int> possibleEvolutions;
+
+		public CreatureType candyType;
+
+		public int group;
+
+		public long gotchaTime;
+
+		public int creadexIndex;
+
+		public bool permanent;
 	}
 }

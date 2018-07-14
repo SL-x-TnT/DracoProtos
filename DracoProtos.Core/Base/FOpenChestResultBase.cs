@@ -1,14 +1,11 @@
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
     public abstract class FOpenChestResultBase : IFObject
 	{
-        public FLoot levelUpLoot;
-        public FLoot loot;
-
-        public void ReadExternal(FInputStream stream)
+		public void ReadExternal(FInputStream stream)
 		{
 			this.levelUpLoot = (FLoot)stream.ReadDynamicObject();
 			this.loot = (FLoot)stream.ReadStaticObject(typeof(FLoot));
@@ -19,5 +16,9 @@ namespace DracoProtos.Core.Base
 			stream.WriteDynamicObject(this.levelUpLoot);
 			stream.WriteStaticObject(this.loot);
 		}
+
+		public FLoot loot;
+
+		public FLoot levelUpLoot;
 	}
 }
