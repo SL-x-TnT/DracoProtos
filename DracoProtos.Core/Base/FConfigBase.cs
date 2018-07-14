@@ -7,102 +7,9 @@ namespace DracoProtos.Core.Base
 {
     public abstract class FConfigBase : FBaseItemUpdate
 	{
-        public float actionInfoShowDuration;
-        public float activeTimeAllowedInBackgroundDuration;
-        public float aggressiveChanceToAttack;
-        public float aggressiveChanceToJump;
-        public float aggressiveChancesCooldownTime;
-        public int altarAvailableFromLevel;
-        public float angularDrag;
-        public int[] arenaLayerLevels;
-        public int[] arenaLevelsThreshold;
-        public Dictionary<ArtifactName, int> artifactSellPrice;
-        public float avatarMoveExtrapolationMaxRunawayDistance;
-        public int avatarMoveMaxDistanceRun;
-        public float avatarMoveMaxMoveDuration;
-        public float avatarMoveReturnToRealPositionDuration;
-        public float avatarMoveReturnToRealPositionTimeout;
-        public int avatarMoveRunSpeed;
-        public float ballCurve;
-        public float bottomSwipeScreenPart;
-        public float[] buildingsVisibilityDistanceLevels;
-        public int buildingsVisionRadius;
-        public float cameraFieldOfView;
-        public SortedDictionary<float, string> catchPopup;
-        public Dictionary<string, string> clientTexts;
-        public bool collectorRatingButtonVisibleToAll;
-        public int[] congratulationLayerLevels;
-        public int contestAvailableFromLevel;
-        public bool contestVisibleToAll;
-        public float contestVisionRadius;
-        public int creaturesDelayVisibility;
-        public int dailyQuestAvailableFromLevel;
-        public bool defaultAugmentedRealitySwitchState;
-        public int defenderBaseAttackBeforeChargedMax;
-        public int defenderBaseAttackBeforeChargedMin;
-        public float delayForCheckMaxSpeedToPlay;
-        public float delayToDisableGameBecauseOfLowGPSAccuracy;
-        public float desiredGpsAccuracy;
-        public float distanceToLoadTiles;
-        public float distanceToUnloadTiles;
-        public bool emulatorCheckEnabled;
-        public int encounterDelayBeforeExtraEncounter;
-        public int[] encounterNeededActiveUserTime;
-        public float fogEndDistance;
-        public float fogStartDistance;
-        public float goOrbitDistance;
-        public float goOrbitDistanceMax;
-        public float goOrbitDistanceMin;
-        public float goOrbitHeightMaxLimit;
-        public float goOrbitHeightMinLimit;
-        public float goOrbitOffsetMax; 
-        public float goOrbitOffsetMin;
-        public float highSpeedDurationRequiredForWarning;
-        public bool maintenanceEnabled;
-        public string mapServer;
-        public int mapVersion;
-        public int maxAngularVelocity;
-        public float maxClientPauseDuration;
-        public float maxSpeedForUse;
-        public int maxSpeedToPlay;
-        public bool mentorChooseEnabled;
-        public bool mentorshipEnabled;
-        public int minFPS;
-        public float minFPSMeasureDurationSec;
-        public float monsterLevelPerUserLevel;
-        public int monsterMaxLevel;
-        public float newsCheckIntervalSeconds;
-        public HashSet<sbyte[]> notEmulatorModelHashes;
-        public float oppositeDodgeTimeoutSeconds;
-        public Dictionary<PersonalizedStop, int> personalizationPriceMap;
-        public PotionConfig potionConfig;
-        public double radarVisionRadius;
-        public Dictionary<RecipeType, List<object>> recipes;
-        public float requestRetryDelay;
-        public float screenDifferentSwipeDivision;
-        public float spinGain;
-        public float stopLootStreakDuration;
-        public int stopUsageHintTillLevel;
-        public float superVisionEffectInterval; 
-        public int superVisionRadius;
-        public float throwSensitivity;
-        public float timeLimitPerDefender;
-        public float topSwipeScreenPart;
-        public int updateRequestCooldownSeconds;
-        public int updateRequestIgnoreWorseAccuracyCooldownSeconds;
-        public int updateRequestMinimalDistance;
-        public int updateRequestPeriodSeconds;
-        public int weeklyQuestAvailableFromLevel;
-        public int wizardAvailableFromLevel;
-        public bool wizardRatingButtonVisibleToAll;
-        public float worldScreenBuffDisplayMaxDurationTimeSeconds;
-        public float xVelocityFactor;
-        public float xVelocityFactorSpin;
-        public float yVelocityFactor;
-
         public override void ReadExternal(FInputStream stream)
-		{
-			base.ReadExternal(stream);
+        {
+            base.ReadExternal(stream);
             this.actionInfoShowDuration = stream.ReadFloat();
             this.activeTimeAllowedInBackgroundDuration = stream.ReadFloat();
             this.aggressiveChanceToAttack = stream.ReadFloat();
@@ -128,7 +35,9 @@ namespace DracoProtos.Core.Base
             this.clientTexts = stream.ReadStaticMap<string, string>(true, true);
             this.collectorRatingButtonVisibleToAll = stream.ReadBoolean();
             this.congratulationLayerLevels = stream.ReadStaticArray<int>(true);
+            this.contestAcceptStartPeriod = stream.ReadFloat();
             this.contestAvailableFromLevel = stream.ReadInt32();
+            this.contestBattleTimeout = stream.ReadFloat();
             this.contestVisibleToAll = stream.ReadBoolean();
             this.contestVisionRadius = stream.ReadFloat();
             this.creaturesDelayVisibility = stream.ReadInt32();
@@ -170,7 +79,7 @@ namespace DracoProtos.Core.Base
             this.newsCheckIntervalSeconds = stream.ReadFloat();
             this.notEmulatorModelHashes = stream.ReadStaticHashSet<sbyte[]>(true);
             this.oppositeDodgeTimeoutSeconds = stream.ReadFloat();
-            this.personalizationPriceMap = stream.ReadStaticMap<PersonalizedStop, int>(true, true);
+            this.personalizationPrices = stream.ReadStaticMap<PersonalizedStop, FPrice>(true, true);
             this.potionConfig = (PotionConfig)stream.ReadStaticObject(typeof(PotionConfig));
             this.radarVisionRadius = stream.ReadDouble();
             this.recipes = stream.ReadStaticMap<RecipeType, List<object>>(true, true);
@@ -197,9 +106,9 @@ namespace DracoProtos.Core.Base
             this.yVelocityFactor = stream.ReadFloat();
         }
 
-		public override void WriteExternal(FOutputStream stream)
-		{
-			base.WriteExternal(stream);
+        public override void WriteExternal(FOutputStream stream)
+        {
+            base.WriteExternal(stream);
             stream.WriteFloat(this.actionInfoShowDuration);
             stream.WriteFloat(this.activeTimeAllowedInBackgroundDuration);
             stream.WriteFloat(this.aggressiveChanceToAttack);
@@ -207,8 +116,8 @@ namespace DracoProtos.Core.Base
             stream.WriteFloat(this.aggressiveChancesCooldownTime);
             stream.WriteInt32(this.altarAvailableFromLevel);
             stream.WriteFloat(this.angularDrag);
-            stream.WriteStaticEnumerable(this.arenaLayerLevels, true);
-            stream.WriteStaticEnumerable(this.arenaLevelsThreshold, true);
+            stream.WriteStaticCollection(this.arenaLayerLevels, true);
+            stream.WriteStaticCollection(this.arenaLevelsThreshold, true);
             stream.WriteStaticMap(this.artifactSellPrice, true, true);
             stream.WriteFloat(this.avatarMoveExtrapolationMaxRunawayDistance);
             stream.WriteInt32(this.avatarMoveMaxDistanceRun);
@@ -218,14 +127,16 @@ namespace DracoProtos.Core.Base
             stream.WriteInt32(this.avatarMoveRunSpeed);
             stream.WriteFloat(this.ballCurve);
             stream.WriteFloat(this.bottomSwipeScreenPart);
-            stream.WriteStaticEnumerable(this.buildingsVisibilityDistanceLevels, true);
+            stream.WriteStaticCollection(this.buildingsVisibilityDistanceLevels, true);
             stream.WriteInt32(this.buildingsVisionRadius);
             stream.WriteFloat(this.cameraFieldOfView);
             stream.WriteStaticMap(this.catchPopup, true, true);
             stream.WriteStaticMap(this.clientTexts, true, true);
             stream.WriteBoolean(this.collectorRatingButtonVisibleToAll);
-            stream.WriteStaticEnumerable(this.congratulationLayerLevels, true);
+            stream.WriteStaticCollection(this.congratulationLayerLevels, true);
+            stream.WriteFloat(this.contestAcceptStartPeriod);
             stream.WriteInt32(this.contestAvailableFromLevel);
+            stream.WriteFloat(this.contestBattleTimeout);
             stream.WriteBoolean(this.contestVisibleToAll);
             stream.WriteFloat(this.contestVisionRadius);
             stream.WriteInt32(this.creaturesDelayVisibility);
@@ -240,7 +151,7 @@ namespace DracoProtos.Core.Base
             stream.WriteFloat(this.distanceToUnloadTiles);
             stream.WriteBoolean(this.emulatorCheckEnabled);
             stream.WriteInt32(this.encounterDelayBeforeExtraEncounter);
-            stream.WriteStaticEnumerable(this.encounterNeededActiveUserTime, true);
+            stream.WriteStaticCollection(this.encounterNeededActiveUserTime, true);
             stream.WriteFloat(this.fogEndDistance);
             stream.WriteFloat(this.fogStartDistance);
             stream.WriteFloat(this.goOrbitDistance);
@@ -265,9 +176,9 @@ namespace DracoProtos.Core.Base
             stream.WriteFloat(this.monsterLevelPerUserLevel);
             stream.WriteInt32(this.monsterMaxLevel);
             stream.WriteFloat(this.newsCheckIntervalSeconds);
-            stream.WriteStaticObject(this.notEmulatorModelHashes);
+            stream.WriteStaticEnumerable(this.notEmulatorModelHashes, true);
             stream.WriteFloat(this.oppositeDodgeTimeoutSeconds);
-            stream.WriteStaticMap(this.personalizationPriceMap, true, true);
+            stream.WriteStaticMap(this.personalizationPrices, true, true);
             stream.WriteStaticObject(this.potionConfig);
             stream.WriteDouble(this.radarVisionRadius);
             stream.WriteStaticMap(this.recipes, true, true);
@@ -293,5 +204,194 @@ namespace DracoProtos.Core.Base
             stream.WriteFloat(this.xVelocityFactorSpin);
             stream.WriteFloat(this.yVelocityFactor);
         }
-	}
+
+        public string mapServer;
+
+        public bool maintenanceEnabled;
+
+        public float spinGain;
+
+        public float ballCurve;
+
+        public int maxAngularVelocity;
+
+        public float angularDrag;
+
+        public float xVelocityFactor;
+
+        public float xVelocityFactorSpin;
+
+        public float yVelocityFactor;
+
+        public float throwSensitivity;
+
+        public int creaturesDelayVisibility;
+
+        public int monsterMaxLevel;
+
+        public float monsterLevelPerUserLevel;
+
+        public double radarVisionRadius;
+
+        public int wizardAvailableFromLevel;
+
+        public int contestAvailableFromLevel;
+
+        public float contestVisionRadius;
+
+        public float contestAcceptStartPeriod;
+
+        public float contestBattleTimeout;
+
+        public int altarAvailableFromLevel;
+
+        public int dailyQuestAvailableFromLevel;
+
+        public int weeklyQuestAvailableFromLevel;
+
+        public int avatarMoveMaxDistanceRun;
+
+        public int avatarMoveRunSpeed;
+
+        public float avatarMoveReturnToRealPositionTimeout;
+
+        public float avatarMoveReturnToRealPositionDuration;
+
+        public float avatarMoveMaxMoveDuration;
+
+        public float avatarMoveExtrapolationMaxRunawayDistance;
+
+        public Dictionary<PersonalizedStop, FPrice> personalizationPrices;
+
+        public int[] arenaLevelsThreshold;
+
+        public int[] congratulationLayerLevels;
+
+        public int[] arenaLayerLevels;
+
+        public Dictionary<RecipeType, List<object>> recipes;
+
+        public float activeTimeAllowedInBackgroundDuration;
+
+        public int[] encounterNeededActiveUserTime;
+
+        public int encounterDelayBeforeExtraEncounter;
+
+        public SortedDictionary<float, string> catchPopup;
+
+        public PotionConfig potionConfig;
+
+        public float goOrbitDistance;
+
+        public float goOrbitHeightMinLimit;
+
+        public float goOrbitHeightMaxLimit;
+
+        public float goOrbitDistanceMin;
+
+        public float goOrbitDistanceMax;
+
+        public float goOrbitOffsetMin;
+
+        public float goOrbitOffsetMax;
+
+        public float cameraFieldOfView;
+
+        public float fogStartDistance;
+
+        public float fogEndDistance;
+
+        public float distanceToLoadTiles;
+
+        public float distanceToUnloadTiles;
+
+        public float aggressiveChanceToAttack;
+
+        public float aggressiveChanceToJump;
+
+        public float aggressiveChancesCooldownTime;
+
+        public int buildingsVisionRadius;
+
+        public int superVisionRadius;
+
+        public float superVisionEffectInterval;
+
+        public float timeLimitPerDefender;
+
+        public float maxClientPauseDuration;
+
+        public float oppositeDodgeTimeoutSeconds;
+
+        public float actionInfoShowDuration;
+
+        public int maxSpeedToPlay;
+
+        public float delayForCheckMaxSpeedToPlay;
+
+        public float maxSpeedForUse;
+
+        public int mapVersion;
+
+        public float delayToDisableGameBecauseOfLowGPSAccuracy;
+
+        public float highSpeedDurationRequiredForWarning;
+
+        public float desiredGpsAccuracy;
+
+        public int updateRequestPeriodSeconds;
+
+        public int updateRequestMinimalDistance;
+
+        public int updateRequestCooldownSeconds;
+
+        public int updateRequestIgnoreWorseAccuracyCooldownSeconds;
+
+        public int defenderBaseAttackBeforeChargedMin;
+
+        public int defenderBaseAttackBeforeChargedMax;
+
+        public int stopUsageHintTillLevel;
+
+        public Dictionary<ArtifactName, int> artifactSellPrice;
+
+        public float newsCheckIntervalSeconds;
+
+        public float worldScreenBuffDisplayMaxDurationTimeSeconds;
+
+        public float requestRetryDelay;
+
+        public bool mentorshipEnabled;
+
+        public float topSwipeScreenPart;
+
+        public float bottomSwipeScreenPart;
+
+        public float screenDifferentSwipeDivision;
+
+        public bool mentorChooseEnabled;
+
+        public float stopLootStreakDuration;
+
+        public bool collectorRatingButtonVisibleToAll;
+
+        public bool wizardRatingButtonVisibleToAll;
+
+        public bool contestVisibleToAll;
+
+        public Dictionary<string, string> clientTexts;
+
+        public bool emulatorCheckEnabled;
+
+        public HashSet<sbyte[]> notEmulatorModelHashes;
+
+        public bool defaultAugmentedRealitySwitchState;
+
+        public int minFPS;
+
+        public float minFPSMeasureDurationSec;
+
+        public float[] buildingsVisibilityDistanceLevels;
+    }
 }
+
