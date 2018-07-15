@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum AllianceType
+	public enum AllianceType
 	{
 		RED,
 		BLUE

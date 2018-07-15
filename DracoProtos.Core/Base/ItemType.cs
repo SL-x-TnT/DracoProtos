@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum ItemType
+	public enum ItemType
 	{
 		MAGIC_BALL_SIMPLE,
 		MAGIC_BALL_NORMAL,

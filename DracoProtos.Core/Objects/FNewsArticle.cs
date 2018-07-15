@@ -1,11 +1,12 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FNewsArticle : FNewsArticleBase
-    {
-        public override void Handle()
-        {
-        }
-    }
+	public class FNewsArticle : FNewsArticleBase
+	{
+		public override void Handle()
+		{
+		}
+	}
 }

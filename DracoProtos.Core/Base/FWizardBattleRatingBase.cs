@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FWizardBattleRatingBase : IFObject
+	public abstract class FWizardBattleRatingBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Objects;
+﻿using System;
+using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FAllianceChooseRequestBase : FBaseItemUpdate
+	public abstract class FAllianceChooseRequestBase : FBaseItemUpdate
 	{
 		public override void ReadExternal(FInputStream stream)
 		{

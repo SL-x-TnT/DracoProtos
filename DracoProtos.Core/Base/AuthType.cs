@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum AuthType
+	public enum AuthType
 	{
 		DEVICE,
 		GOOGLE,

@@ -1,10 +1,10 @@
-﻿using DracoProtos.Core.Objects;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-    public static class FGameObjects
+	public static class FGameObjects
 	{
 		static FGameObjects()
 		{

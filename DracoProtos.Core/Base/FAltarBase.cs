@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using System;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FAltarBase : IFObject
+	public abstract class FAltarBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

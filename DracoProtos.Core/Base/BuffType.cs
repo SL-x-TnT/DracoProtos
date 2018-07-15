@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum BuffType
+	public enum BuffType
 	{
 		ATTACKER_CP_BOOST,
 		BEST_BALL_LUCK,

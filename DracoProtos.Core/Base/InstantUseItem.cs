@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum InstantUseItem
+	public enum InstantUseItem
 	{
 		LIBRARY_COOLDOWN_REDUCE,
 		ARENA_TRIBUTE_COOLDOWN_REDUCE,

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FShopConfigBase : IFObject
+	public abstract class FShopConfigBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

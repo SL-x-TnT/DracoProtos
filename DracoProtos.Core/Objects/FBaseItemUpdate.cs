@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public abstract class FBaseItemUpdate : FBaseItemUpdateBase
+	public abstract class FBaseItemUpdate : FBaseItemUpdateBase
 	{
 		public abstract void Handle();
 	}

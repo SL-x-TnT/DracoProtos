@@ -3,7 +3,7 @@ using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FServiceError : FServiceErrorBase
+	public class FServiceError : FServiceErrorBase
 	{
 		public FServiceError()
 		{

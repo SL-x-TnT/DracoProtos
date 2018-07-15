@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum ArtifactType
+	public enum ArtifactType
 	{
 		ARTIFACT_REMOTE_BUILDING_CONTROL,
 		ARTIFACT_ARENA_EXTRA_CREATURE,

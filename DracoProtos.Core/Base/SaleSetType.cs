@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum SaleSetType
+	public enum SaleSetType
 	{
 		SET_1,
 		SET_2,

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace DracoProtos.Core.Serializer
 {
-    public class FInputStream : IDisposable
+	public class FInputStream : IDisposable
 	{
 		public FInputStream(SerializerContext context, BinaryReader dataStream)
 		{
@@ -405,16 +405,16 @@ namespace DracoProtos.Core.Serializer
 				Type elementType = clazz.GetElementType();
 				return this.ReadStaticArray(elementType, elementType.IsPrimitive);
 			}
-			IFObject IFObject = Activator.CreateInstance(clazz) as IFObject;
-			if (IFObject == null)
+			FObject fobject = Activator.CreateInstance(clazz) as FObject;
+			if (fobject == null)
 			{
-				throw new Exception("Can't instantiate IFObject of class: " + clazz);
+				throw new Exception("Can't instantiate FObject of class: " + clazz);
 			}
 			object result;
 			try
 			{
-				IFObject.ReadExternal(this);
-				result = IFObject;
+				fobject.ReadExternal(this);
+				result = fobject;
 			}
 			catch (Exception exception)
 			{

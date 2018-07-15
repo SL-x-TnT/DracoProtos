@@ -1,12 +1,12 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FTransferMonsterToCandiesResponse : FTransferMonsterToCandiesResponseBase
-    {
-        public override void Handle()
-        {
-            
-        }
-    }
+	public class FTransferMonsterToCandiesResponse : FTransferMonsterToCandiesResponseBase
+	{
+		public override void Handle()
+		{
+		}
+	}
 }

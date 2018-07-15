@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum ArtifactName
+	public enum ArtifactName
 	{
 		NONE,
 		ARTIFACT_TELEPATHY_1,

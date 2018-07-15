@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public static class ItemTypeEx
+	public static class ItemTypeEx
 	{
 		public static bool IsRune(this ItemType type)
 		{

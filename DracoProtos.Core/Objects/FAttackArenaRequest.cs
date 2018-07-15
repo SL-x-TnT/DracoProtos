@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FAttackArenaRequest : FAttackArenaRequestBase
+	public class FAttackArenaRequest : FAttackArenaRequestBase
 	{
 	}
 }

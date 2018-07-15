@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using System;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FEggBase : IFObject
+	public abstract class FEggBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

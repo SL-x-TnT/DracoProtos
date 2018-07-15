@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FArenaDetails : FArenaDetailsBase
+	public class FArenaDetails : FArenaDetailsBase
 	{
 		public bool HasRemoteBuildingControlCharges
 		{
@@ -14,7 +15,6 @@ namespace DracoProtos.Core.Objects
 
         public override void Handle()
         {
-           
         }
-    }
+	}
 }

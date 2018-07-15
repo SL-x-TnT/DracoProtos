@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Serializer
+﻿using System;
+
+namespace DracoProtos.Core.Serializer
 {
-    public interface IFObject
+	public interface FObject
 	{
 		void ReadExternal(FInputStream stream);
 

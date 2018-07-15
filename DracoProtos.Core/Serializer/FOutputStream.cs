@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DracoProtos.Core.Serializer
 {
-    public class FOutputStream : IDisposable
+	public class FOutputStream : IDisposable
 	{
 		public FOutputStream(SerializerContext context, BinaryWriter dataStream)
 		{
@@ -246,7 +246,7 @@ namespace DracoProtos.Core.Serializer
 			}
 			else
 			{
-				this.WriteShort((short)(((long)length & (long)(-65536)) >> 16 | 32768L));
+				this.WriteShort((short)(((long)length & (long)-65536) >> 16 | 32768L));
 				this.WriteShort((short)(length & 65535));
 			}
 		}
@@ -359,11 +359,11 @@ namespace DracoProtos.Core.Serializer
 			}
 			else
 			{
-				if (!(o is IFObject))
+				if (!(o is FObject))
 				{
 					throw new Exception("can't write unknown object: " + type);
 				}
-				(o as IFObject).WriteExternal(this);
+				(o as FObject).WriteExternal(this);
 			}
 		}
 

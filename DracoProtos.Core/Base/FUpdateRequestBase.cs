@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FUpdateRequestBase : IFObject
+	public abstract class FUpdateRequestBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

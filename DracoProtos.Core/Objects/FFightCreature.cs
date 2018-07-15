@@ -3,7 +3,7 @@ using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FFightCreature : FFightCreatureBase
+	public class FFightCreature : FFightCreatureBase
 	{
 		public bool IsEnoughEnergyForChargedAttack()
 		{

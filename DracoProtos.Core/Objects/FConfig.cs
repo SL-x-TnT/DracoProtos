@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Security.Cryptography;
 using DracoProtos.Core.Serializer;
 using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FConfig : FConfigBase
+	public class FConfig : FConfigBase
 	{
+		public override void Handle()
+		{
+		}
+
 		public FRecipeConfig GetRecipeConfig(RecipeType recipeName, int level)
 		{
 			return (FRecipeConfig)this.recipes[recipeName][level - 1];
@@ -29,11 +34,6 @@ namespace DracoProtos.Core.Objects
 			return md.ComputeHash(buffer);
 		}
 
-        public override void Handle()
-        {
-           
-        }
-
-        private const string MAP_VERSION_PREF = "MAP_VERSION_PREF";
+		private const string MAP_VERSION_PREF = "MAP_VERSION_PREF";
 	}
 }

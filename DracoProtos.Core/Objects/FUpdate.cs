@@ -1,9 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FUpdate : FUpdateBase
+	public class FUpdate : FUpdateBase
 	{
 		public T FindFirst<T>() where T : FBaseItemUpdate
 		{

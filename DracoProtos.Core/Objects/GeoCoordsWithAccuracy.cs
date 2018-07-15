@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
 using DracoProtos.Core.Extensions;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class GeoCoordsWithAccuracy : GeoCoordsWithAccuracyBase
+	public class GeoCoordsWithAccuracy : GeoCoordsWithAccuracyBase
 	{
 		public static GeoCoordsWithAccuracy of(Coordinates coordinates)
 		{

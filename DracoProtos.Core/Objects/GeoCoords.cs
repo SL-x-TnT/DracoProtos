@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using DracoProtos.Core.Base;
 using DracoProtos.Core.Extensions;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class GeoCoords : GeoCoordsBase
+	public class GeoCoords : GeoCoordsBase
 	{
 		public static GeoCoords of(Coordinates coordinates)
 		{

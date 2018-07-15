@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FResistModifyDetails : FResistModifyDetailsBase
+	public class FResistModifyDetails : FResistModifyDetailsBase
 	{
 	}
 }
