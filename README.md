@@ -1,4 +1,4 @@
-DracoProtos.Core [![NuGet](https://img.shields.io/nuget/v/DracoProtos.Core.svg?maxAge=60)](https://www.nuget.org/packages/DracoProtos.Core) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SNATC29B4ZJD4) [![Discord](https://img.shields.io/badge/Discord-Online-blue.svg)](https://discord.gg/epabKJb)
+DracoProtos.Core [![Build status](https://ci.appveyor.com/api/projects/status/r0n2xki770vd462y/branch/master?svg=true)](https://ci.appveyor.com/project/RocketBot/dracoprotos/branch/master) [![NuGet](https://img.shields.io/nuget/v/DracoProtos.Core.svg?maxAge=60)](https://www.nuget.org/packages/DracoProtos.Core) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SNATC29B4ZJD4) [![Discord](https://img.shields.io/badge/Discord-Online-blue.svg)](https://discord.gg/epabKJb)
 ===================
 
 #### Libraries
