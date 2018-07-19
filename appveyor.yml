@@ -43,11 +43,11 @@ init:
     - ps: >-
         if ($env:APPVEYOR_REPO_TAG -eq "true")
         {
-            $env:DracoLib_Version = "$($env:APPVEYOR_REPO_TAG_NAME.Replace('v', ''))";
+            $env:DracoProtos_Version = "$($env:APPVEYOR_REPO_TAG_NAME.Replace('v', ''))";
         }
         else
         {
-            $env:DracoLib_Version = "$($env:APPVEYOR_BUILD_VERSION)";
+            $env:DracoProtos_Version = "$($env:APPVEYOR_BUILD_VERSION)";
         }
         
 build:
@@ -67,18 +67,18 @@ after_build:
         New-Item -ItemType Directory -Force -Path "$($env:APPVEYOR_BUILD_FOLDER)\$($env:PLATFORM)\$($env:CONFIGURATION)";
         if ($env:PLATFORM -eq "x86")
         {
-            Move-Item -Path "$($env:APPVEYOR_BUILD_FOLDER)\DracoLib.Core\bin\$($env:PLATFORM)\$($env:CONFIGURATION)" -Destination "$($env:APPVEYOR_BUILD_FOLDER)\$($env:PLATFORM)\$($env:CONFIGURATION)\DracoLib.Core" -Force;
+            Move-Item -Path "$($env:APPVEYOR_BUILD_FOLDER)\DracoProtos.Core\bin\$($env:PLATFORM)\$($env:CONFIGURATION)" -Destination "$($env:APPVEYOR_BUILD_FOLDER)\$($env:PLATFORM)\$($env:CONFIGURATION)\DracoProtos.Core" -Force;
         }  
         elseif ($env:PLATFORM -eq "x64")
         {
-            Move-Item -Path "$($env:APPVEYOR_BUILD_FOLDER)\DracoLib.Core\bin\$($env:PLATFORM)\$($env:CONFIGURATION)" -Destination "$($env:APPVEYOR_BUILD_FOLDER)\$($env:PLATFORM)\$($env:CONFIGURATION)\DracoLib.Core" -Force;
+            Move-Item -Path "$($env:APPVEYOR_BUILD_FOLDER)\DracoProtos.Core\bin\$($env:PLATFORM)\$($env:CONFIGURATION)" -Destination "$($env:APPVEYOR_BUILD_FOLDER)\$($env:PLATFORM)\$($env:CONFIGURATION)\DracoProtos.Core" -Force;
         }
         elseif ($env:PLATFORM -eq "Any CPU")
         {
-            Move-Item -Path "$($env:APPVEYOR_BUILD_FOLDER)\DracoLib.Core\bin\$($env:CONFIGURATION)" -Destination "$($env:APPVEYOR_BUILD_FOLDER)\$($env:PLATFORM)\$($env:CONFIGURATION)\DracoLib.Core" -Force;
+            Move-Item -Path "$($env:APPVEYOR_BUILD_FOLDER)\DracoProtos.Core\bin\$($env:CONFIGURATION)" -Destination "$($env:APPVEYOR_BUILD_FOLDER)\$($env:PLATFORM)\$($env:CONFIGURATION)\DracoProtos.Core" -Force;
         }
   
 artifacts:
 
-  - path: '\$(PLATFORM)\$(CONFIGURATION)\DracoLib.Core'
-    name: DracoLib.Core
+  - path: '\$(PLATFORM)\$(CONFIGURATION)\DracoProtos.Core'
+    name: DracoProtos.Core
