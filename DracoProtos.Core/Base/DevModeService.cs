@@ -65,6 +65,26 @@ namespace DracoProtos.Core.Base
 			});
 		}
 
+		public Async<object> AddContestCompletedEvent(int contestPlace, float contestScore)
+		{
+			return new Async<object>("DevModeService", "addContestCompletedEvent", new object[]
+			{
+				contestPlace,
+				contestScore
+			});
+		}
+
+		public Async<object> AddContestRatingAward(int month, int place, int dust, int runes)
+		{
+			return new Async<object>("DevModeService", "addContestRatingAward", new object[]
+			{
+				month,
+				place,
+				dust,
+				runes
+			});
+		}
+
 		public Async<FAvaUpdate> AddDust(int amount)
 		{
 			return new Async<FAvaUpdate>("DevModeService", "addDust", new object[]

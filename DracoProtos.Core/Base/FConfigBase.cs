@@ -38,6 +38,7 @@ namespace DracoProtos.Core.Base
 			this.contestAcceptStartPeriod = stream.ReadFloat();
 			this.contestAvailableFromLevel = stream.ReadInt32();
 			this.contestBattleTimeout = stream.ReadFloat();
+			this.contestRatingButtonVisibleToAll = stream.ReadBoolean();
 			this.contestVisibleToAll = stream.ReadBoolean();
 			this.contestVisionRadius = stream.ReadFloat();
 			this.creaturesDelayVisibility = stream.ReadInt32();
@@ -137,6 +138,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.contestAcceptStartPeriod);
 			stream.WriteInt32(this.contestAvailableFromLevel);
 			stream.WriteFloat(this.contestBattleTimeout);
+			stream.WriteBoolean(this.contestRatingButtonVisibleToAll);
 			stream.WriteBoolean(this.contestVisibleToAll);
 			stream.WriteFloat(this.contestVisionRadius);
 			stream.WriteInt32(this.creaturesDelayVisibility);
@@ -376,6 +378,8 @@ namespace DracoProtos.Core.Base
 		public bool collectorRatingButtonVisibleToAll;
 
 		public bool wizardRatingButtonVisibleToAll;
+
+		public bool contestRatingButtonVisibleToAll;
 
 		public bool contestVisibleToAll;
 

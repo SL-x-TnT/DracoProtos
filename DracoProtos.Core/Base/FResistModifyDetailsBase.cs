@@ -10,6 +10,7 @@ namespace DracoProtos.Core.Base
 			this.matchingCreatures = stream.ReadInt32();
 			this.resultResistMax = stream.ReadFloat();
 			this.resultResistMin = stream.ReadFloat();
+			this.tier = stream.ReadInt32();
 		}
 
 		public void WriteExternal(FOutputStream stream)
@@ -17,6 +18,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.matchingCreatures);
 			stream.WriteFloat(this.resultResistMax);
 			stream.WriteFloat(this.resultResistMin);
+			stream.WriteInt32(this.tier);
 		}
 
 		public float resultResistMin;
@@ -24,5 +26,7 @@ namespace DracoProtos.Core.Base
 		public float resultResistMax;
 
 		public int matchingCreatures;
+
+		public int tier;
 	}
 }

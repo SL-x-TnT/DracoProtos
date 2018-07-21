@@ -9,6 +9,8 @@ namespace DracoProtos.Core.Objects
 		{
 		}
 
+		private static float _lastEncounterTime;
+
 		private static int _encounterNeededActiveUserTime = -1;
 	}
 }

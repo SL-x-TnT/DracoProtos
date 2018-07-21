@@ -7,7 +7,6 @@ namespace DracoProtos.Core.Objects
 	{
 		public override void Handle()
 		{
-			//EventBus.SHOW_ENCOUNTER_BATTLE_RESULT.Dispatch(this);
 		}
 	}
 }

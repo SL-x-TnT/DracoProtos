@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using DracoProtos.Core.Extensions;
+﻿using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
+using System;
+using System.Collections.Generic;
 
 namespace DracoProtos.Core.Base
 {

@@ -3,7 +3,7 @@ using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FArena : FArenaBase
+	public class FContestRating : FContestRatingBase
 	{
 	}
 }

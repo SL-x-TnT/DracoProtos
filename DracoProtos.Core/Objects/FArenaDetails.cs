@@ -13,8 +13,8 @@ namespace DracoProtos.Core.Objects
 			}
 		}
 
-        public override void Handle()
-        {
-        }
+		public override void Handle()
+		{
+		}
 	}
 }

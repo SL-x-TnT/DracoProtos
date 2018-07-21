@@ -90,6 +90,11 @@ namespace DracoProtos.Core.Base
 			});
 		}
 
+		public Async<FUpdate> CollectContestRatingAward()
+		{
+			return new Async<FUpdate>("PlayerService", "collectContestRatingAward", new object[0]);
+		}
+
 		public Async<FActiveObjectsUpdate> CollectTribute(int currentUtcOffsetSeconds)
 		{
 			return new Async<FActiveObjectsUpdate>("PlayerService", "collectTribute", new object[]
@@ -124,6 +129,16 @@ namespace DracoProtos.Core.Base
 		public Async<FCollectorRating> GetCollectorRegionalRatingTop()
 		{
 			return new Async<FCollectorRating>("PlayerService", "getCollectorRegionalRatingTop", new object[0]);
+		}
+
+		public Async<FContestRating> GetContestGlobalRatingTop()
+		{
+			return new Async<FContestRating>("PlayerService", "getContestGlobalRatingTop", new object[0]);
+		}
+
+		public Async<FContestRating> GetContestRegionalRatingTop()
+		{
+			return new Async<FContestRating>("PlayerService", "getContestRegionalRatingTop", new object[0]);
 		}
 
 		public Async<FDailyQuest> GetDailyQuest()

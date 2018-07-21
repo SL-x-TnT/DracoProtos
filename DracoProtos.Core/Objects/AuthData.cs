@@ -19,19 +19,5 @@ namespace DracoProtos.Core.Objects
 		{
 			return string.Format("AuthType: {0}, ProfileId: {1}, TokenId: {2}", this.authType, this.profileId, this.tokenId);
 		}
-
-		public static AuthData Device()
-		{
-			return new AuthData
-			{
-				authType = AuthType.DEVICE,
-				profileId = Identifiers.deviceId
-			};
-		}
 	}
-
-    internal class Identifiers
-    {
-        public static string deviceId { get; internal set; }
-    }
 }

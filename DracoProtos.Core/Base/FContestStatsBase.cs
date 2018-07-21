@@ -8,6 +8,7 @@ namespace DracoProtos.Core.Base
 		public void ReadExternal(FInputStream stream)
 		{
 			this.completed = stream.ReadBoolean();
+			this.gainedScore = stream.ReadFloat();
 			this.hpPercentTotal = stream.ReadFloat();
 			this.isMyself = stream.ReadBoolean();
 			this.lostAsOpponentCount = stream.ReadInt32();
@@ -20,6 +21,7 @@ namespace DracoProtos.Core.Base
 		public void WriteExternal(FOutputStream stream)
 		{
 			stream.WriteBoolean(this.completed);
+			stream.WriteFloat(this.gainedScore);
 			stream.WriteFloat(this.hpPercentTotal);
 			stream.WriteBoolean(this.isMyself);
 			stream.WriteInt32(this.lostAsOpponentCount);
@@ -44,5 +46,7 @@ namespace DracoProtos.Core.Base
 		public int lostAsOpponentCount;
 
 		public float hpPercentTotal;
+
+		public float gainedScore;
 	}
 }

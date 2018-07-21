@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DracoProtos.Core.Base;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using DracoProtos.Core.Serializer;
-using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Serializer
 {
@@ -121,7 +120,7 @@ namespace DracoProtos.Core.Serializer
 			throw new Exception("Wrong type: " + array.GetType());
 		}
 
-		public static readonly SerializerContext PORTAL = new SerializerContext("portal", FGameObjects.CLASSES, 1440475418u);
+		public static readonly SerializerContext PORTAL = new SerializerContext("portal", FGameObjects.CLASSES, 3053618417u);
 
 		public const sbyte NULL = 0;
 

@@ -7,7 +7,6 @@ namespace DracoProtos.Core.Objects
 	{
 		public override void SetSprite(RawImage rawImage)
 		{
-			//rawImage.texture = Prefabs.sprites.GetCandyByName(this.candyType);
 		}
 
 		public override string GetLootGroup()

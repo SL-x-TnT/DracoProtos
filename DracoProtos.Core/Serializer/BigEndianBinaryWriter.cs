@@ -1,3 +1,4 @@
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -7,8 +8,7 @@ namespace DracoProtos.Core.Serializer
 {
     public class BigEndianBinaryWriter : BinaryWriter
     {
-        public BigEndianBinaryWriter(Stream output)
-            : base(output)
+        public BigEndianBinaryWriter(Stream output) : base(output)
         {
         }
 
