@@ -1,6 +1,6 @@
-﻿using DracoProtos.Core.Extensions;
+﻿using System;
+using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
-using System;
 
 namespace DracoProtos.Core.Base
 {

@@ -9,4 +9,8 @@ namespace DracoProtos.Core.Objects
 		{
 		}
 	}
+
+    public class RawImage
+    {
+    }
 }
