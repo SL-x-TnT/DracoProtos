@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum RecipeType
+    public enum RecipeType
 	{
 		RECIPE_ACTIVATION_RADIUS_IMPROVE_1,
 		RECIPE_PERSONAL_STOP_FIELD_1,

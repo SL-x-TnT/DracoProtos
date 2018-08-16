@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class FDefenderDetailsBase : FObject
+    public abstract class FDefenderDetailsBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

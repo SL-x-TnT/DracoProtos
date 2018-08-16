@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum FNicknameValidationError
+    public enum FNicknameValidationError
 	{
 		IS_EMPTY,
 		TOO_SHORT,

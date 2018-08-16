@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum EventLogType
+    public enum EventLogType
 	{
 		CREATURE_CAUGHT,
 		EGG_HATCHED,

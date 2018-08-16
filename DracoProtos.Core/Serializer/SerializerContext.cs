@@ -5,7 +5,7 @@ using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Serializer
 {
-	public class SerializerContext
+    public class SerializerContext
 	{
 		public SerializerContext(string name, Dictionary<Type, sbyte> map, uint protocolVersion)
 		{

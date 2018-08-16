@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DracoProtos.Core.Serializer
 {
-	public class FOutputStream : IDisposable
+    public class FOutputStream : IDisposable
 	{
 		public FOutputStream(SerializerContext context, BinaryWriter dataStream)
 		{

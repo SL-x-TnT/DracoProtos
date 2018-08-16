@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum CreatureType
+    public enum CreatureType
 	{
 		MONSTER_WATER_1,
 		MONSTER_WATER_2,

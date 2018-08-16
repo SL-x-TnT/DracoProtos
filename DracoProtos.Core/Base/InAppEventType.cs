@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum InAppEventType
+    public enum InAppEventType
 	{
 		APP_FIRST_START,
 		EVENT_1_NEAR_AIM,

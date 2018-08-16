@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FLootItemBuff : FLootItemBuffBase
+    public class FLootItemBuff : FLootItemBuffBase
 	{
 		public override void SetSprite(RawImage rawImage)
 		{

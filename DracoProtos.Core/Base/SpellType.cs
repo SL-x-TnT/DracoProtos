@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum SpellType
+    public enum SpellType
 	{
 		ACTIVATION_RADIUS,
 		STOP_FIELD,

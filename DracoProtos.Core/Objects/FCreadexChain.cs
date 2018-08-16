@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FCreadexChain : FCreadexChainBase
+    public class FCreadexChain : FCreadexChainBase
 	{
 		protected bool Equals(FCreadexChainBase other)
 		{

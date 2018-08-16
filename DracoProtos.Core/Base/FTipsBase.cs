@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class FTipsBase : FObject
+    public abstract class FTipsBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

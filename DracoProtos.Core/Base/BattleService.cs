@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-	public class BattleService
+    public class BattleService
 	{
 		public Async<FUpdate> AddDefenderToArena(FBuildingRequest arena, FClientRequest clientRequest, string creatureId)
 		{

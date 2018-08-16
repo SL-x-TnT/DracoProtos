@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum SkillQuality
+    public enum SkillQuality
 	{
 		NORMAL,
 		GOOD,

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace DracoProtos.Core.Extensions
 {
@@ -70,6 +71,24 @@ namespace DracoProtos.Core.Extensions
         public static float SqrMagnitude(Vector3 vector)
         {
             return vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var vector = obj as Vector3;
+            return vector != null &&
+                   z == vector.z &&
+                   EqualityComparer<Vector3>.Default.Equals(Normalized, vector.Normalized) &&
+                   _sqrMagnitude == vector._sqrMagnitude;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 1470256003;
+            hashCode = hashCode * -1521134295 + z.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<Vector3>.Default.GetHashCode(Normalized);
+            hashCode = hashCode * -1521134295 + _sqrMagnitude.GetHashCode();
+            return hashCode;
         }
 
         public float _sqrMagnitude

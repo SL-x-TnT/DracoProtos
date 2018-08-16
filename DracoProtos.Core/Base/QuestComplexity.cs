@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DracoProtos.Core.Base
+﻿namespace DracoProtos.Core.Base
 {
-	public enum QuestComplexity
+    public enum QuestComplexity
 	{
 		EASY,
 		MIDDLE,

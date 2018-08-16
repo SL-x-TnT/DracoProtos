@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class Tile : TileBase
+    public class Tile : TileBase
 	{
 		public static int calcZoom(int y15)
 		{

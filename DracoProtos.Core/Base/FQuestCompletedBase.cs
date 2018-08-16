@@ -1,10 +1,9 @@
-﻿using System;
-using DracoProtos.Core.Objects;
+﻿using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class FQuestCompletedBase : FBaseItemUpdate
+    public abstract class FQuestCompletedBase : FBaseItemUpdate
 	{
 		public override void ReadExternal(FInputStream stream)
 		{
