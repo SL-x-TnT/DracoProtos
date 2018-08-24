@@ -32,5 +32,5 @@ namespace DracoProtos.Core.Objects
 		public override void Handle()
 		{
 		}
-    }
+	}
 }
