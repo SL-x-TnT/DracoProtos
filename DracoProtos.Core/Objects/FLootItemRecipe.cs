@@ -13,4 +13,8 @@ namespace DracoProtos.Core.Objects
 			return base.GetLootGroup() + "/" + this.recipe;
 		}
 	}
+
+    public class RawImage
+    {
+    }
 }
