@@ -7,9 +7,7 @@ namespace DracoProtos.Core.Objects
 	{
 		public FClientRequest()
 		{
-#pragma warning disable CS0618 // Le type ou le membre est obsolète
-            this.currentUtcOffsetSeconds = (int)TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).TotalSeconds;
-#pragma warning restore CS0618 // Le type ou le membre est obsolète
+            this.currentUtcOffsetSeconds = (int)TimeZoneInfo.Utc.GetUtcOffset(DateTime.Now).TotalSeconds;
         }
 
 		public override string ToString()

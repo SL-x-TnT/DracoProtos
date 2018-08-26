@@ -15,7 +15,7 @@ We are following [semantic versioning](http://semver.org/) for DracoProtos.  Eve
 
 | Version      | App Version                 | Extra                     |
 |--------------|-----------------------------|---------------------------|
-| 1.9.4        | 1.9.4                       |                           |
+| 1.9.4.1      | 1.9.4                       |                           |
 | 1.0.x        | 1.8.1                       | first tested              |
 
 ### CREDITS
