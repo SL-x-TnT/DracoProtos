@@ -420,7 +420,7 @@ namespace DracoProtos.Core.Serializer
 			{
 				//Debug.LogError("Cannot read static object: " + clazz);
 				//Debug.LogException(exception);
-				throw;
+				throw exception;
 			}
 			return result;
 		}

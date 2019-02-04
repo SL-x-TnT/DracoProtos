@@ -1,10 +1,9 @@
-﻿using System;
-using DracoProtos.Core.Extensions;
+﻿using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-	public class ItemService
+    public class ItemService
 	{
 		public Async<bool> DiscardItems(ItemType type, int count)
 		{

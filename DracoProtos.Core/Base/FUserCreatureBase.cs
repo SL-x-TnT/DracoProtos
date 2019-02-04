@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class FUserCreatureBase : FObject
+    public abstract class FUserCreatureBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

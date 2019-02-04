@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FBagUpdate : FBagUpdateBase
+    public class FBagUpdate : FBagUpdateBase
 	{
 		protected bool Equals(FBagUpdate other)
 		{

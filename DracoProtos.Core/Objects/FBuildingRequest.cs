@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FBuildingRequest : FBuildingRequestBase
+    public class FBuildingRequest : FBuildingRequestBase
 	{
 		public FBuildingRequest(string id, GeoCoords coords, string dungeonId)
 		{

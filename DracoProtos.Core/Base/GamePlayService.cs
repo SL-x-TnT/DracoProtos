@@ -1,10 +1,9 @@
-﻿using System;
-using DracoProtos.Core.Extensions;
+﻿using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-	public class GamePlayService
+    public class GamePlayService
 	{
 		public Async<FCatchingCreature> FeedCreature(string creatureId, ItemType type, Tile parentTile)
 		{

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class FWeeklyQuestBase : FObject
+    public abstract class FWeeklyQuestBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

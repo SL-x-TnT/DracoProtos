@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class AuthDataBase : FObject
+    public abstract class AuthDataBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

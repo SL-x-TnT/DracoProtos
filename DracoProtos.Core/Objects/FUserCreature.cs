@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FUserCreature : FUserCreatureBase
+    public class FUserCreature : FUserCreatureBase
 	{
 		public bool IsFavorite()
 		{

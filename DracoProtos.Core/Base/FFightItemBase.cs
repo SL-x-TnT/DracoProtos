@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Serializer;
+﻿using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class FFightItemBase : FObject
+    public abstract class FFightItemBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

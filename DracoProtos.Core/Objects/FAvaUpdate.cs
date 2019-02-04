@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FAvaUpdate : FAvaUpdateBase
+    public class FAvaUpdate : FAvaUpdateBase
 	{
 		public override void Handle()
 		{

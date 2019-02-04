@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class FDailyQuest : FDailyQuestBase
+    public class FDailyQuest : FDailyQuestBase
 	{
 		public bool IsEmpty()
 		{

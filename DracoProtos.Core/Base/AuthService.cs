@@ -1,10 +1,9 @@
-﻿using System;
-using DracoProtos.Core.Extensions;
+﻿using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-	public class AuthService
+    public class AuthService
 	{
 		public Async<FUserInfo> AcceptLicence(int licenseVersion)
 		{

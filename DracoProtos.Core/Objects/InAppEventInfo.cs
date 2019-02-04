@@ -1,9 +1,8 @@
-﻿using System;
-using DracoProtos.Core.Base;
+﻿using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-	public class InAppEventInfo : InAppEventInfoBase
+    public class InAppEventInfo : InAppEventInfoBase
 	{
 	}
 }

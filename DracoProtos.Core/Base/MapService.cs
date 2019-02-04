@@ -1,10 +1,9 @@
-﻿using System;
-using DracoProtos.Core.Extensions;
+﻿using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-	public class MapService
+    public class MapService
 	{
 		public Async<FBuilding> CancelBuildingPersonalization(FBuildingRequest building)
 		{

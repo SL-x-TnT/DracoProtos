@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-	public class UserCreatureService
+    public class UserCreatureService
 	{
 		public Async<object> AddCreatureToGroup(string creatureId, int group)
 		{

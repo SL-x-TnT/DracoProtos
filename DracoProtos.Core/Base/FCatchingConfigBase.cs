@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-	public abstract class FCatchingConfigBase : FObject
+    public abstract class FCatchingConfigBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{
