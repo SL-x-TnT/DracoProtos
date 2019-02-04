@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FAltarDetails : FAltarDetailsBase
+	public class FAltarDetails : FAltarDetailsBase
 	{
 		public override void Handle()
 		{

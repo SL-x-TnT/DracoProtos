@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Objects;
+﻿using System;
+using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBuildingRequestBase : FObject
+	public abstract class FBuildingRequestBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

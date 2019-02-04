@@ -1,12 +1,14 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using System;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FFightCreatureBase : FObject
+	public abstract class FFightCreatureBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{
 			this.alias = (string)stream.ReadDynamicObject();
+			this.ancient = stream.ReadBoolean();
 			this.attacker = stream.ReadBoolean();
 			this.baseCp = stream.ReadInt32();
 			this.chargedSkill = stream.ReadUtfString();
@@ -28,6 +30,7 @@ namespace DracoProtos.Core.Base
 			this.hp = stream.ReadFloat();
 			this.id = stream.ReadUtfString();
 			this.incomingEnergyOnAttack = stream.ReadFloat();
+			this.increasedCpByArtifact = stream.ReadBoolean();
 			this.increasedDmgTo = (ElementType)stream.ReadEnum(typeof(ElementType));
 			this.mainSkill = stream.ReadUtfString();
 			this.mainSkillAim = stream.ReadBoolean();
@@ -53,6 +56,7 @@ namespace DracoProtos.Core.Base
 		public void WriteExternal(FOutputStream stream)
 		{
 			stream.WriteDynamicObject(this.alias);
+			stream.WriteBoolean(this.ancient);
 			stream.WriteBoolean(this.attacker);
 			stream.WriteInt32(this.baseCp);
 			stream.WriteUtfString(this.chargedSkill);
@@ -74,6 +78,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.hp);
 			stream.WriteUtfString(this.id);
 			stream.WriteFloat(this.incomingEnergyOnAttack);
+			stream.WriteBoolean(this.increasedCpByArtifact);
 			stream.WriteEnum(this.increasedDmgTo);
 			stream.WriteUtfString(this.mainSkill);
 			stream.WriteBoolean(this.mainSkillAim);
@@ -179,5 +184,9 @@ namespace DracoProtos.Core.Base
 		public float startCamPosHeight;
 
 		public bool attacker;
+
+		public bool ancient;
+
+		public bool increasedCpByArtifact;
 	}
 }

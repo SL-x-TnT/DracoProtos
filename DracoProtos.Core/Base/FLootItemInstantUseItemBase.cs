@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Objects;
+﻿using System;
+using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FLootItemInstantUseItemBase : FBaseLootItem
+	public abstract class FLootItemInstantUseItemBase : FBaseLootItem
 	{
 		public override void ReadExternal(FInputStream stream)
 		{

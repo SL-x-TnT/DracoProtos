@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FConfigBase : FBaseItemUpdate
+	public abstract class FConfigBase : FBaseItemUpdate
 	{
 		public override void ReadExternal(FInputStream stream)
 		{
@@ -15,6 +16,7 @@ namespace DracoProtos.Core.Base
 			this.aggressiveChanceToJump = stream.ReadFloat();
 			this.aggressiveChancesCooldownTime = stream.ReadFloat();
 			this.altarAvailableFromLevel = stream.ReadInt32();
+			this.ancientMapEffectDistance = stream.ReadDouble();
 			this.angularDrag = stream.ReadFloat();
 			this.arenaLayerLevels = stream.ReadStaticArray<int>(true);
 			this.arenaLevelsThreshold = stream.ReadStaticArray<int>(true);
@@ -115,6 +117,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteFloat(this.aggressiveChanceToJump);
 			stream.WriteFloat(this.aggressiveChancesCooldownTime);
 			stream.WriteInt32(this.altarAvailableFromLevel);
+			stream.WriteDouble(this.ancientMapEffectDistance);
 			stream.WriteFloat(this.angularDrag);
 			stream.WriteStaticCollection(this.arenaLayerLevels, true);
 			stream.WriteStaticCollection(this.arenaLevelsThreshold, true);
@@ -395,5 +398,7 @@ namespace DracoProtos.Core.Base
 		public float minFPSMeasureDurationSec;
 
 		public float[] buildingsVisibilityDistanceLevels;
+
+		public double ancientMapEffectDistance;
 	}
 }

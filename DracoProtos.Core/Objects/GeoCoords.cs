@@ -5,7 +5,7 @@ using DracoProtos.Core.Extensions;
 
 namespace DracoProtos.Core.Objects
 {
-    public class GeoCoords : GeoCoordsBase
+	public class GeoCoords : GeoCoordsBase
 	{
 		public static GeoCoords of(Coordinates coordinates)
 		{

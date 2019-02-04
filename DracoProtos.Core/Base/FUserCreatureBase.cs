@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FUserCreatureBase : FObject
+	public abstract class FUserCreatureBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{
 			this.alias = (string)stream.ReadDynamicObject();
+			this.ancient = stream.ReadBoolean();
 			this.attackValue = stream.ReadInt32();
 			this.baseCp = stream.ReadInt32();
 			this.candyType = (CreatureType)stream.ReadEnum(typeof(CreatureType));
@@ -46,6 +48,7 @@ namespace DracoProtos.Core.Base
 		public void WriteExternal(FOutputStream stream)
 		{
 			stream.WriteDynamicObject(this.alias);
+			stream.WriteBoolean(this.ancient);
 			stream.WriteInt32(this.attackValue);
 			stream.WriteInt32(this.baseCp);
 			stream.WriteEnum(this.candyType);
@@ -130,6 +133,8 @@ namespace DracoProtos.Core.Base
 		public int staminaValue;
 
 		public bool isAttacker;
+
+		public bool ancient;
 
 		public bool improvable;
 

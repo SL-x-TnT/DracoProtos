@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Extensions;
+﻿using System;
+using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-    public class MagicService
+	public class MagicService
 	{
 		public Async<FUpdate> CastSpell(FBuildingRequest request)
 		{

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace DracoProtos.Core.Serializer
 {
-    public class FInputStream : IDisposable
+	public class FInputStream : IDisposable
 	{
 		public FInputStream(SerializerContext context, BinaryReader dataStream)
 		{
@@ -420,7 +420,7 @@ namespace DracoProtos.Core.Serializer
 			{
 				//Debug.LogError("Cannot read static object: " + clazz);
 				//Debug.LogException(exception);
-				throw exception;
+				throw;
 			}
 			return result;
 		}

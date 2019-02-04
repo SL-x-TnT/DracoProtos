@@ -1,12 +1,14 @@
-﻿using DracoProtos.Core.Objects;
+﻿using System;
+using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FWildCreatureBase : FObject
+	public abstract class FWildCreatureBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{
+			this.ancient = stream.ReadBoolean();
 			this.chest = stream.ReadBoolean();
 			this.coords = (GeoCoords)stream.ReadDynamicObject();
 			this.entry = (FCreadexEntry)stream.ReadDynamicObject();
@@ -21,6 +23,7 @@ namespace DracoProtos.Core.Base
 
 		public void WriteExternal(FOutputStream stream)
 		{
+			stream.WriteBoolean(this.ancient);
 			stream.WriteBoolean(this.chest);
 			stream.WriteDynamicObject(this.coords);
 			stream.WriteDynamicObject(this.entry);
@@ -52,5 +55,7 @@ namespace DracoProtos.Core.Base
 		public float scaleCollider;
 
 		public bool chest;
+
+		public bool ancient;
 	}
 }

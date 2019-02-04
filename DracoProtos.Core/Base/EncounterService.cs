@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Extensions;
+﻿using System;
+using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-    public class EncounterService
+	public class EncounterService
 	{
 		public Async<object> GiveUpEncounter()
 		{

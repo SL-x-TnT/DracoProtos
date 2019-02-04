@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Extensions;
+﻿using System;
+using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-    public class ItemService
+	public class ItemService
 	{
 		public Async<bool> DiscardItems(ItemType type, int count)
 		{
@@ -27,6 +28,11 @@ namespace DracoProtos.Core.Base
 		public Async<FAvaUpdate> UseIncense()
 		{
 			return new Async<FAvaUpdate>("ItemService", "useIncense", new object[0]);
+		}
+
+		public Async<FAvaUpdate> UseRangeExtender()
+		{
+			return new Async<FAvaUpdate>("ItemService", "useRangeExtender", new object[0]);
 		}
 
 		public Async<FUpdate> UseShovel(FClientRequest request)

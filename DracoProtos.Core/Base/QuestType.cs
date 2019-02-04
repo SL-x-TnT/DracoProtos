@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum QuestType
+	public enum QuestType
 	{
 		WIN_ARENA_MONSTER,
 		OPEN_EGGS,

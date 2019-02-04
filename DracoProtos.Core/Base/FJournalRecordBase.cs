@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FJournalRecordBase : FObject
+	public abstract class FJournalRecordBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

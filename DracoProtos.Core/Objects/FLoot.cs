@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FLoot : FLootBase
+	public class FLoot : FLootBase
 	{
 		public FLoot()
 		{

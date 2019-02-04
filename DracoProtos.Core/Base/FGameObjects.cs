@@ -181,7 +181,7 @@ namespace DracoProtos.Core.Base
 			FGameObjects.CLASSES.Add(typeof(Tile), -82);
 		}
 
-		public const uint ProtocolVersion = 3053618417u;
+		public const uint ProtocolVersion = 1946277628u;
 
 		public static readonly Dictionary<Type, sbyte> CLASSES = new Dictionary<Type, sbyte>();
 	}

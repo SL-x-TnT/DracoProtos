@@ -5,7 +5,7 @@ using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Serializer
 {
-    public class SerializerContext
+	public class SerializerContext
 	{
 		public SerializerContext(string name, Dictionary<Type, sbyte> map, uint protocolVersion)
 		{
@@ -120,7 +120,7 @@ namespace DracoProtos.Core.Serializer
 			throw new Exception("Wrong type: " + array.GetType());
 		}
 
-		public static readonly SerializerContext PORTAL = new SerializerContext("portal", FGameObjects.CLASSES, 3053618417u);
+		public static readonly SerializerContext PORTAL = new SerializerContext("portal", FGameObjects.CLASSES, 1946277628u);
 
 		public const sbyte NULL = 0;
 

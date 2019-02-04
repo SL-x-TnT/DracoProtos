@@ -1,12 +1,15 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FBagUpdate : FBagUpdateBase
+	public class FBagUpdate : FBagUpdateBase
 	{
 		protected bool Equals(FBagUpdate other)
 		{
-			return this.allowedItemsSize == other.allowedItemsSize && object.Equals(this.items, other.items) && object.Equals(this.lockedRunes, other.lockedRunes);
+			return this.allowedItemsSize == other.allowedItemsSize && this.items.SequenceEqual(other.items) && this.lockedRunes.SequenceEqual(other.lockedRunes);
 		}
 
 		public override bool Equals(object obj)

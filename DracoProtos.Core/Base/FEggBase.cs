@@ -1,11 +1,13 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using System;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FEggBase : FObject
+	public abstract class FEggBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{
+			this.chooseCreature = stream.ReadBoolean();
 			this.eggType = (ItemType)stream.ReadEnum(typeof(ItemType));
 			this.id = stream.ReadUtfString();
 			this.incubatorId = (string)stream.ReadDynamicObject();
@@ -19,6 +21,7 @@ namespace DracoProtos.Core.Base
 
 		public void WriteExternal(FOutputStream stream)
 		{
+			stream.WriteBoolean(this.chooseCreature);
 			stream.WriteEnum(this.eggType);
 			stream.WriteUtfString(this.id);
 			stream.WriteDynamicObject(this.incubatorId);
@@ -47,5 +50,7 @@ namespace DracoProtos.Core.Base
 		public ItemType eggType;
 
 		public ItemType? incubatorType;
+
+		public bool chooseCreature;
 	}
 }

@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum LogDetailsType
+	public enum LogDetailsType
 	{
 		CREATURE_CP,
 		CREATURE_NAME,

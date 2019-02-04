@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FAvaUpdateBase : FBaseItemUpdate
+	public abstract class FAvaUpdateBase : FBaseItemUpdate
 	{
 		public override void ReadExternal(FInputStream stream)
 		{
@@ -25,6 +26,7 @@ namespace DracoProtos.Core.Base
 			this.eggsHatchedCount = stream.ReadInt32();
 			this.emulatorCheckDisabled = stream.ReadBoolean();
 			this.exp = stream.ReadFloat();
+			this.extraDodgeTime = stream.ReadFloat();
 			this.freshNewsDate = stream.ReadInt64();
 			this.hasUnhandledAdvices = stream.ReadBoolean();
 			this.incenseDuration = stream.ReadInt64();
@@ -36,6 +38,8 @@ namespace DracoProtos.Core.Base
 			this.level = stream.ReadInt32();
 			this.monstersCaughtCount = stream.ReadInt32();
 			this.nextLevelExperience = stream.ReadInt32();
+			this.rangeExtenderCooldownTill = stream.ReadInt64();
+			this.rangeExtenderLeftTime = stream.ReadInt64();
 			this.recipeLevels = stream.ReadStaticMap<RecipeType, int>(true, true);
 			this.registerDate = stream.ReadInt64();
 			this.stopFieldDuration = stream.ReadInt64();
@@ -66,6 +70,7 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.eggsHatchedCount);
 			stream.WriteBoolean(this.emulatorCheckDisabled);
 			stream.WriteFloat(this.exp);
+			stream.WriteFloat(this.extraDodgeTime);
 			stream.WriteInt64(this.freshNewsDate);
 			stream.WriteBoolean(this.hasUnhandledAdvices);
 			stream.WriteInt64(this.incenseDuration);
@@ -77,6 +82,8 @@ namespace DracoProtos.Core.Base
 			stream.WriteInt32(this.level);
 			stream.WriteInt32(this.monstersCaughtCount);
 			stream.WriteInt32(this.nextLevelExperience);
+			stream.WriteInt64(this.rangeExtenderCooldownTill);
+			stream.WriteInt64(this.rangeExtenderLeftTime);
 			stream.WriteStaticMap(this.recipeLevels, true, true);
 			stream.WriteInt64(this.registerDate);
 			stream.WriteInt64(this.stopFieldDuration);
@@ -159,5 +166,11 @@ namespace DracoProtos.Core.Base
 		public bool hasUnhandledAdvices;
 
 		public bool emulatorCheckDisabled;
+
+		public float extraDodgeTime;
+
+		public long rangeExtenderLeftTime;
+
+		public long rangeExtenderCooldownTill;
 	}
 }

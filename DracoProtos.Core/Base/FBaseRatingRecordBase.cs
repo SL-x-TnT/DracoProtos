@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using System;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FBaseRatingRecordBase : FObject
+	public abstract class FBaseRatingRecordBase : FObject
 	{
 		public virtual void ReadExternal(FInputStream stream)
 		{

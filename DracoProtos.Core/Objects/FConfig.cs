@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Security.Cryptography;
 using DracoProtos.Core.Serializer;
 using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FConfig : FConfigBase
+	public class FConfig : FConfigBase
 	{
 		public override void Handle()
 		{

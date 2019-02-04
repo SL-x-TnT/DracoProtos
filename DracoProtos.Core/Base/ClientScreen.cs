@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum ClientScreen
+	public enum ClientScreen
 	{
 		LOGIN,
 		LOADING,

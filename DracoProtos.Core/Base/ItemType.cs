@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum ItemType
+	public enum ItemType
 	{
 		MAGIC_BALL_SIMPLE,
 		MAGIC_BALL_NORMAL,
@@ -41,6 +43,7 @@
 		EGG_LILAC,
 		EGG_LILAC_PREMIUM,
 		EGG_GOLD,
-		EGG_GOLD_PREMIUM
+		EGG_GOLD_PREMIUM,
+		RANGE_EXTENDER
 	}
 }

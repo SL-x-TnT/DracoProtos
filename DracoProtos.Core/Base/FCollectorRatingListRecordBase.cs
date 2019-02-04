@@ -1,9 +1,10 @@
-﻿using DracoProtos.Core.Objects;
+﻿using System;
+using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCollectorRatingListRecordBase : FBaseRatingRecord
+	public abstract class FCollectorRatingListRecordBase : FBaseRatingRecord
 	{
 		public override void ReadExternal(FInputStream stream)
 		{

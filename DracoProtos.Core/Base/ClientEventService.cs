@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-    public class ClientEventService
+	public class ClientEventService
 	{
 		public Async<object> ClientLogRecords(List<FClientLogRecord> logRecords)
 		{

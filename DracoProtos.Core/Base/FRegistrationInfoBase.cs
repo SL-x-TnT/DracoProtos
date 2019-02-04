@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using System;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FRegistrationInfoBase : FObject
+	public abstract class FRegistrationInfoBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

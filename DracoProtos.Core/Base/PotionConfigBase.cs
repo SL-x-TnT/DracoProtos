@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class PotionConfigBase : FObject
+	public abstract class PotionConfigBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{

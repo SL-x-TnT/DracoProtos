@@ -1,12 +1,14 @@
-﻿using DracoProtos.Core.Serializer;
+﻿using System;
+using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FDefenderDetailsBase : FObject
+	public abstract class FDefenderDetailsBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{
 			this.allianceType = (AllianceType)stream.ReadEnum(typeof(AllianceType));
+			this.ancient = stream.ReadBoolean();
 			this.creatureAlias = (string)stream.ReadDynamicObject();
 			this.creatureCp = stream.ReadInt32();
 			this.creatureName = (CreatureType)stream.ReadEnum(typeof(CreatureType));
@@ -19,6 +21,7 @@ namespace DracoProtos.Core.Base
 		public void WriteExternal(FOutputStream stream)
 		{
 			stream.WriteEnum(this.allianceType);
+			stream.WriteBoolean(this.ancient);
 			stream.WriteDynamicObject(this.creatureAlias);
 			stream.WriteInt32(this.creatureCp);
 			stream.WriteEnum(this.creatureName);
@@ -43,5 +46,7 @@ namespace DracoProtos.Core.Base
 		public int userAppearance;
 
 		public AllianceType allianceType;
+
+		public bool ancient;
 	}
 }

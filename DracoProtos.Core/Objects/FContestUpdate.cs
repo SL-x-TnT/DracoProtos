@@ -3,7 +3,7 @@ using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FContestUpdate : FContestUpdateBase
+	public class FContestUpdate : FContestUpdateBase
 	{
 		public bool IsPreparingStage
 		{

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DracoProtos.Core.Serializer
 {
-	public class BigEndianBinaryReader : BinaryReader
+    public class BigEndianBinaryReader : BinaryReader
 	{
 		public BigEndianBinaryReader(Stream input) : base(input)
 		{

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Extensions;
 using DracoProtos.Core.Objects;
 
 namespace DracoProtos.Core.Base
 {
-    public class UserCreatureService
+	public class UserCreatureService
 	{
 		public Async<object> AddCreatureToGroup(string creatureId, int group)
 		{
@@ -86,6 +87,15 @@ namespace DracoProtos.Core.Base
 			return new Async<FHatchingResult>("UserCreatureService", "openHatchedEgg", new object[]
 			{
 				incubatorId
+			});
+		}
+
+		public Async<FHatchingResult> OpenHatchedEggWithCreature(string incubatorId, CreatureType selectedCreatureType)
+		{
+			return new Async<FHatchingResult>("UserCreatureService", "openHatchedEggWithCreature", new object[]
+			{
+				incubatorId,
+				selectedCreatureType
 			});
 		}
 

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FUserCreature : FUserCreatureBase
+	public class FUserCreature : FUserCreatureBase
 	{
 		public bool IsFavorite()
 		{
@@ -38,6 +39,21 @@ namespace DracoProtos.Core.Objects
 		public bool CanAttack()
 		{
 			return !this.isArenaDefender && !this.IsDead();
+		}
+
+		public override bool Equals(object obj)
+		{
+			return !object.ReferenceEquals(null, obj) && (object.ReferenceEquals(this, obj) || (obj.GetType() == base.GetType() && this.Equals((FUserCreature)obj)));
+		}
+
+		public static bool operator ==(FUserCreature left, FUserCreature right)
+		{
+			return object.Equals(left, right);
+		}
+
+		public static bool operator !=(FUserCreature left, FUserCreature right)
+		{
+			return !object.Equals(left, right);
 		}
 
 		public static float HP_EPSILON = 0.01f;

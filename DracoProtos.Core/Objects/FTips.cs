@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FTips : FTipsBase
+	public class FTips : FTipsBase
 	{
 	}
 }

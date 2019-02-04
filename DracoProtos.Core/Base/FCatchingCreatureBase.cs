@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DracoProtos.Core.Objects;
 using DracoProtos.Core.Serializer;
 
 namespace DracoProtos.Core.Base
 {
-    public abstract class FCatchingCreatureBase : FObject
+	public abstract class FCatchingCreatureBase : FObject
 	{
 		public void ReadExternal(FInputStream stream)
 		{
 			this.aggressive = stream.ReadBoolean();
+			this.ancient = stream.ReadBoolean();
 			this.candyType = (CreatureType)stream.ReadEnum(typeof(CreatureType));
 			this.catching = (FCatchingConfig)stream.ReadDynamicObject();
 			this.cp = stream.ReadInt32();
@@ -25,6 +27,7 @@ namespace DracoProtos.Core.Base
 		public void WriteExternal(FOutputStream stream)
 		{
 			stream.WriteBoolean(this.aggressive);
+			stream.WriteBoolean(this.ancient);
 			stream.WriteEnum(this.candyType);
 			stream.WriteDynamicObject(this.catching);
 			stream.WriteInt32(this.cp);
@@ -61,5 +64,7 @@ namespace DracoProtos.Core.Base
 		public ItemType? feedFoodType;
 
 		public bool aggressive;
+
+		public bool ancient;
 	}
 }

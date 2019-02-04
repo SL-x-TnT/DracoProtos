@@ -7,8 +7,8 @@ namespace DracoProtos.Core.Objects
 	{
 		public FClientRequest()
 		{
-            this.currentUtcOffsetSeconds = (int)TimeZoneInfo.Utc.GetUtcOffset(DateTime.Now).TotalSeconds;
-        }
+			this.currentUtcOffsetSeconds = (int)TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).TotalSeconds;
+		}
 
 		public override string ToString()
 		{

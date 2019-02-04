@@ -1,6 +1,8 @@
-﻿namespace DracoProtos.Core.Base
+﻿using System;
+
+namespace DracoProtos.Core.Base
 {
-    public enum BuffType
+	public enum BuffType
 	{
 		ATTACKER_CP_BOOST,
 		BEST_BALL_LUCK,
@@ -20,6 +22,7 @@
 		TOWER_ELEMENTAL_FIRE,
 		TOWER_ELEMENTAL_EARTH,
 		RADAR_IMPROVE,
-		ENCOUNTER_EXTRA_LOOT_ITEM
+		ENCOUNTER_EXTRA_LOOT_ITEM,
+		RANGE_EXTENDER
 	}
 }

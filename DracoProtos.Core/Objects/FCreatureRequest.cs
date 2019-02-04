@@ -1,8 +1,9 @@
-﻿using DracoProtos.Core.Base;
+﻿using System;
+using DracoProtos.Core.Base;
 
 namespace DracoProtos.Core.Objects
 {
-    public class FCreatureRequest : FCreatureRequestBase
+	public class FCreatureRequest : FCreatureRequestBase
 	{
 		public static FCreatureRequest of(FWildCreature creature, bool veryFirst)
 		{
