@@ -39,21 +39,6 @@ namespace DracoProtos.Core.Objects
 			return !this.isArenaDefender && !this.IsDead();
 		}
 
-		public override bool Equals(object obj)
-		{
-			return !object.ReferenceEquals(null, obj) && (object.ReferenceEquals(this, obj) || (obj.GetType() == base.GetType() && this.Equals((FUserCreature)obj)));
-		}
-
-		public static bool operator ==(FUserCreature left, FUserCreature right)
-		{
-			return object.Equals(left, right);
-		}
-
-		public static bool operator !=(FUserCreature left, FUserCreature right)
-		{
-			return !object.Equals(left, right);
-		}
-
 		public static float HP_EPSILON = 0.01f;
 	}
 }
