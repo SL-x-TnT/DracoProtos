@@ -21,7 +21,7 @@ We are following [semantic versioning](http://semver.org/) for DracoProtos.  Eve
 
 | Version      | App Version                 | Extra                     |
 |--------------|-----------------------------|---------------------------|
-| 1.10.0.1     | 1.10.0                      | Compatible                |
+| 1.10.1.0     | 1.10.1                      | Compatible                |
 
 ### CREDITS
 [DracoApi (niicojs, SL-x-TnT)](https://github.com/dracoapi)

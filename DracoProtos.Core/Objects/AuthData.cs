@@ -1,10 +1,11 @@
 ﻿using DracoProtos.Core.Base;
+using DracoProtos.Core.Extensions;
 
 namespace DracoProtos.Core.Objects
 {
     public class AuthData : AuthDataBase
 	{
-		public bool IsDevice()
+        public bool IsDevice()
 		{
 			return this.authType == AuthType.DEVICE;
 		}
@@ -24,7 +25,7 @@ namespace DracoProtos.Core.Objects
 			return new AuthData
 			{
 				authType = AuthType.DEVICE,
-				//profileId = Identifiers.deviceId
+				profileId = Identifiers.deviceId
 			};
 		}
 	}
