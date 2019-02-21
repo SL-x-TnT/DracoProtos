@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/d6dddda25a178dc2dd93edae79821fe3?s=512&amp;amp;r=g&amp;amp;d=retro</PackageIconUrl>
+    <Authors>--=FurtiF™=-- and Xelwon</Authors>
+    <Description>A central repository for all proto files of DraconiusGO.</Description>
+    <PackageProjectUrl>https://github.com/Account-Managers/DracoProtos</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Account-Managers/DracoProtos</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Draconius;DracoProtos;netstandard</PackageTags>
+    <Version>1.10.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>Account Manager's</Company>
+    <Copyright>2018-2019</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705</NoWarn>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\CoordExtensions.cs" />
+  </ItemGroup>
+
+</Project>
